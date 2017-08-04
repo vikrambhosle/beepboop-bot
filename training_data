@@ -1,0 +1,47 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+    {
+        "text": "hi",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "my phone isn't turning on.",
+        "intent": "device_failure",
+        "entities": [
+          {
+            "start": 3,
+            "end": 8,
+            "value": "phone",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "my phone is not working.",
+        "intent": "device_failure",
+        "entities": [
+          {
+            "start": 3,
+            "end": 8,
+            "value": "phone",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "My phone crashed and isn’t working anymore.",
+        "intent": "device_failure",
+        "entities": [
+          {
+            "start": 3,
+            "end": 8,
+            "value": "phone",
+            "entity": "device"
+          }
+        ]
+      }
+    ]
+  }
+}
