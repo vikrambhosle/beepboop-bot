@@ -2,5 +2,5 @@
   "pipeline": "mitie",
   "mitie_file": "/home/vikrambhosle402/botkit/MITIE-models/english/total_word_feature_extractor.dat",
   "path" : "/home/vikrambhosle402/models",
-  "data" : "/home/vikrambhosle402/botkit/MITIE-models/english/c1c4c2e8f135b1d6719e92f0e3de860b014cc29d/rasa-training.txt"
+  "data" : "/home/vikrambhosle402/botkit/MITIE-models/english/train_data"
 }
