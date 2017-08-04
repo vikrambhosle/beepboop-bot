@@ -75,7 +75,7 @@ module.exports = function(config) {
       }
 
       for (let t = 0; t < patterns.length; t++) {
-        if (message.intent.name === patterns[t]) {
+        if (message.intent === patterns[t]) {
           return true;
         }
       }
