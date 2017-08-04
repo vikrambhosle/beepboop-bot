@@ -15,7 +15,7 @@ module.exports = function(config) {
     receive: function (bot, message, next) {
       /*eslint-disable */
       let postData = {
-        'q': message.text.toLowerCase(),
+        'q': message.text,
       };
       /*eslint-enable */
 
