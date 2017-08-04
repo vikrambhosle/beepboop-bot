@@ -1,5 +1,5 @@
 var Botkit = require('botkit')
-let rasa = require('botkit-rasa-middleware')({rasa_uri: 'http://localhost:5000'});
+let rasa = require('./botkit-rasa-middleware')({rasa_uri: 'http://localhost:5000'});
 var token = process.env.SLACK_TOKEN
 
 var controller = Botkit.slackbot({
