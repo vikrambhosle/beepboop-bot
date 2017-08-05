@@ -17,12 +17,27 @@ module.exports = config => {
         return
       }
 
+      //
+      
+         let postData = {
+        'q': message.text.toLowerCase(),
+      };
+      /*eslint-enable */
+
+      let requestOptions = {
+        url: config.rasa_uri + '/parse',
+        body: postData,
+        json: true
+};
+//
+      
+      
       debug('Sending message to Rasa', message.text)
       const options = {
         method: 'POST',
-        uri: `${config.rasa_uri}/parse-d`,
+        url: `${config.rasa_uri}/parse`,
         body: {
-          'q': 'message.text'
+          'q': message.text,
         },
         json: true
       }
