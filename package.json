@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "beepboop-botkit": "^1.4.0",
-    "botkit-ras":"1.0.0",
     "botkit": "~0.1.1",
     "debug": "^2.6.8",
     "request": "^2.81.0",
