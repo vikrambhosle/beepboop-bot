@@ -9,6 +9,7 @@
   "dependencies": {
     "beepboop-botkit": "^1.4.0",
     "botkit": "~0.1.1",
-    "botkit-rasa":"1.0.0"
+    "debug": "^2.6.8",
+    "request-promise": "^4.2.1"
   }
 }
