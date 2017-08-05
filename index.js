@@ -1,6 +1,6 @@
 var Botkit = require('botkit')
 var rasa = require('botkit-rasa')({rasa_uri: 'http://localhost:5000'});
-controller.middleware.receive.use(rasa.receive);
+
 
 var token = process.env.SLACK_TOKEN
 
@@ -10,6 +10,7 @@ var controller = Botkit.slackbot({
   debug: false
 })
 
+controller.middleware.receive.use(rasa.receive);
 // Assume single team mode if we have a SLACK_TOKEN
 if (token) {
   console.log('Starting in single-team mode')
