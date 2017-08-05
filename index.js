@@ -46,3 +46,13 @@ controller.on('bot_channel_join', function (bot, message) {
 controller.hears(['hi'], ['ambient', 'direct_message','direct_mention','mention'], function (bot, message) {
   bot.reply(message, 'Hello.')
 })
+
+controller.hears(['device_failure'], 'direct_message,direct_mention,mention',
+  function (bot, message) {
+  let reply = 'Try pressing the power button for 30 seconds. ';
+  reply += 'Bring the phone to the service center if it does not start. ';
+  reply += 'Don't forget to carry your warranty card.';
+ 
+  bot.reply(message, reply);
+})
+
