@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "beepboop-botkit": "^1.4.0",
-    "botkit-rasa":"1.0.0",
+    "botkit-ras":"1.0.0",
     "botkit": "~0.1.1"
   }
 }
