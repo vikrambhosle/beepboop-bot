@@ -1,4 +1,6 @@
 var Botkit = require('botkit')
+var rasa = require('botkit-rasa')({rasa_uri: 'http://localhost:5000'});
+controller.middleware.receive.use(rasa.receive);
 
 var token = process.env.SLACK_TOKEN
 
@@ -26,10 +28,16 @@ if (token) {
   require('beepboop-botkit').start(controller, { debug: true })
 }
 
-controller.on('bot_channel_join', function (bot, message) {
+/*controller.on('bot_channel_join', function (bot, message) {
   bot.reply(message, "I'm here!")
 })
 
 controller.hears(['hi'], ['ambient', 'direct_message','direct_mention','mention'], function (bot, message) {
   bot.reply(message, 'Hello.')
-})
+})*/
+controller.hears(['device_failure'],'message_received', rasa.hears, function(bot, message) {
+
+    console.log('Intent:', message.intent);
+    console.log('Entities:', message.entities);    
+
+});
