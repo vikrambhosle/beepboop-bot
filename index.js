@@ -38,6 +38,6 @@ controller.hears(['hi'], ['ambient', 'direct_message','direct_mention','mention'
 controller.hears(['device_failure'],'message_received', rasa.hears, function(bot, message) {
 
     console.log('Intent:', message.intent);
-    console.log('Entities:', message.entities);    
-
+    console.log('Entities:', message.entities);  
+    
 });
