@@ -43,7 +43,7 @@ controller.hears(['device_failure'],'message_received', rasa.hears, function(bot
 
 });
 controller.hears(['greet'],'message_received', rasa.hears, function(bot, message) {
-    bot.reply(message, 'what the f**')
+    bot.reply(message, 'hmm*')
     //console.log('Intent:', message.intent);
    // console.log('Entities:', message.entities);  
 
