@@ -1,4 +1,4 @@
-const request = require('request-promise')
+const request = require('request')
 const debug = require('debug')('botkit:rasa')
 
 module.exports = config => {
@@ -37,7 +37,7 @@ module.exports = config => {
         method: 'POST',
         url:`${config.rasa_uri}/parse`,
         body: {
-          q: message.text
+          'q': message.text
         },
         json: true
       };
