@@ -28,17 +28,23 @@ module.exports = config => {
         url: config.rasa_uri + '/parse',
         body: postData,
         json: true
+        
+            body: {
+          'q': message.text
+        },
 };
 */
       
+      let postData = {
+        'q': message.text,
+      };
+  
       
       debug('Sending message to Rasa', message.text)
       const options = {
         method: 'POST',
         url:`${config.rasa_uri}/parse`,
-        body: {
-          'q': message.text
-        },
+        body: postData,
         json: true
       };
 
