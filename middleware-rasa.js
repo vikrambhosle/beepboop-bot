@@ -35,7 +35,7 @@ module.exports = config => {
 };
 */
       
-      let postData = { 'q': 'my phone is not working'};
+      let postData = { 'q': 'my phone is not not not working'};
   
       
       debug('Sending message to Rasa', message.text)
@@ -58,7 +58,7 @@ module.exports = config => {
 
     hears: (patterns, message) => {
       return patterns.some(pattern => {
-        if (message.intent === pattern) {
+        if (message.intent.name === pattern) {
           debug('Rasa intent matched hear pattern', message.intent, pattern)
           return true
         }
