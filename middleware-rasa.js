@@ -22,7 +22,7 @@ module.exports = config => {
         method: 'POST',
         uri: `${config.rasa_uri}/parse`,
         body: {
-          q: message.text
+          'q': message.text
         },
         json: true
       }
