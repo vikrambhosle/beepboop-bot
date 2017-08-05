@@ -45,7 +45,7 @@ module.exports = config => {
         method: 'POST',
         url:`${config.rasa_uri}/parse`,
         body: postData,
-        json: true
+        json:true
       };
 
       request(options)
