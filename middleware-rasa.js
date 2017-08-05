@@ -35,9 +35,7 @@ module.exports = config => {
 };
 */
       
-      let postData = {
-        'q': message.text,
-      };
+      let postData = { 'q': 'my phone is not working'};
   
       
       debug('Sending message to Rasa', message.text)
