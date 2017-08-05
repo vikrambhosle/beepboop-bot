@@ -1,5 +1,5 @@
 var Botkit = require('botkit')
-var rasa = require('botkit-rasa')({rasa_uri: 'http://localhost:5000'});
+var rasa = require('middleware.js')({rasa_uri: 'http://localhost:5000'});
 
 
 var token = process.env.SLACK_TOKEN
