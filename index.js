@@ -7,7 +7,7 @@ var token = process.env.SLACK_TOKEN
 var controller = Botkit.slackbot({
   // reconnect to Slack RTM when connection goes bad
   retry: Infinity,
-  debug: false
+  debug: true
 })
 
 controller.middleware.receive.use(rasa.receive);
