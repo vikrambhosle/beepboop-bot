@@ -17,7 +17,7 @@ module.exports = config => {
         next()
         return
       }
-      if (message.type !=' message') {
+      if (message.type !='message') {
         next()
         return
       }
