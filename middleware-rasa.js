@@ -55,7 +55,7 @@ module.exports = function(config) {
     hears: (patterns, message) => {
       return patterns.some(pattern => {
         
-        if (typeof(message.intent.name) == 'undefined') {
+        if (typeof(message.intent) == 'undefined') {
  message.intent.name = 'greet';
 }
         
