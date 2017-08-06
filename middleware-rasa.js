@@ -56,7 +56,7 @@ module.exports = function(config) {
       return patterns.some(pattern => {
         
         if (typeof(message.intent) == 'undefined') {
- message.intent.name = 'greet';
+message.intent='greet';
 }
         
         if (message.intent.name === pattern) {
