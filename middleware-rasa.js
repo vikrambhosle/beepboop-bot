@@ -52,17 +52,14 @@ module.exports = function(config) {
         next();
       });
     },
-    hears: function (patterns, message) {
-      if (patterns.indexOf('*') >= 0) {
-        return true;
-      }
-
-      for (let t = 0; t < patterns.length; t++) {
-        if (message.intent.name === patterns[t]) {
-          return true;
+    hears: (patterns, message) => {
+      return patterns.some(pattern => {
+        if (message.intent.name === pattern) {
+          debug('Rasa intent matched hear pattern', message.intent, pattern)
+          return true
         }
-      }
-    }
+      })
+}
   };
 
   return middleware;
