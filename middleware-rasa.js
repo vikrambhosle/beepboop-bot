@@ -64,6 +64,7 @@ module.exports = config => {
           debug('Rasa response', response)
           message.intent = response.intent
           message.entities = response.entities
+         console.log(message)
           // @TODO: add other info like confidence?
           next()
         })
