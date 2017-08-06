@@ -36,9 +36,9 @@ module.exports = config => {
 */
         console.log(message.text);
    
-      let postData = {'q': "+ message.text +"};
+      let postData = {'q':"'" + message.text + "'"};
   
-    
+    console.log(postData);
       
       debug('Sending message to Rasa', message.text)
       const options = {
