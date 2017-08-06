@@ -15,7 +15,7 @@ module.exports = function(config) {
     receive: function (bot, message, next) {
       /*eslint-disable */
       let postData = {
-        'q': message.text.toLowerCase(),
+        'q': message.text
       };
       /*eslint-enable */
 
@@ -52,11 +52,11 @@ module.exports = function(config) {
                   bodyEntities[i].value) === -1) {
               // Entity exists already. Push the new entity value into the same
               // entity.
-              messageEntities[bodyEntities[i].entity.toLowerCase()].push(
+              messageEntities[bodyEntities[i].entity].push(
                 bodyEntities[i].value);
             } else {
               // This is a new entity. Add it to message entities.
-              messageEntities[bodyEntities[i].entity.toLowerCase()] =
+              messageEntities[bodyEntities[i].entity] =
                 [bodyEntities[i].value];
             }
           }
