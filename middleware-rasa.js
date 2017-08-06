@@ -43,7 +43,7 @@ module.exports = config => {
    var qvalue= addQuotes(message.text)
    console.log(qvalue);
    */
-      let postData = {'q':,message.text};
+      let postData = {'q':message.text};
   
     console.log(postData);
       
