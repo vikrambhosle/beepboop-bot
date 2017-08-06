@@ -12,7 +12,7 @@ module.exports = config => {
 
   var middleware = {
     receive: (bot, message, next) => {
-      if (message.is_echo) {
+      if (message.is_echo || message.type != 'message') {
         next()
         return
       }
