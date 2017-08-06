@@ -35,8 +35,15 @@ module.exports = config => {
 };
 */
         console.log(message.text);
+      
+      function addQuotes(value){
+    var quotedVar = "\'" + value + "\'";
+    return quotedVar;
+}
+   var qvalue= addQuotes(message.text)
+   console.log(qvalue);
    
-      let postData = {'q':"'" + message.text + "'"};
+      let postData = {'q':qvalue};
   
     console.log(postData);
       
