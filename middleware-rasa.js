@@ -54,6 +54,11 @@ module.exports = function(config) {
     },
     hears: (patterns, message) => {
       return patterns.some(pattern => {
+        
+        if (typeof(message.intent.name) == 'undefined') {
+return false
+}
+        
         if (message.intent.name === pattern) {
           debug('Rasa intent matched hear pattern', message.intent, pattern)
           return true
