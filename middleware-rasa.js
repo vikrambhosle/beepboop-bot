@@ -14,11 +14,11 @@ module.exports = config => {
     receive: (bot, message, next) => {
       console.log(message);
       if (!message.text || message.is_echo || message.bot_id) {
-        next()
+       
         return
       }
       if (message.type !='message') {
-        next()
+        
         return
       }
       /*
