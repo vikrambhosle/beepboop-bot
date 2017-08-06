@@ -36,7 +36,7 @@ module.exports = config => {
 */
         console.log(message.text);
    
-      let postData = {'q':'hi'};
+      let postData = {'q': "+ message.text +"};
   
     
       
