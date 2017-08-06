@@ -44,26 +44,9 @@ module.exports = function(config) {
 
           // Group all similar entities in an array.
           let bodyEntities = body.entities;
-          let messageEntities = {};
-
-          for (let i = 0; i < bodyEntities.length; i++) {
-            if (bodyEntities[i].entity in messageEntities &&
-                messageEntities[bodyEntities[i].entity].indexOf(
-                  bodyEntities[i].value) === -1) {
-              // Entity exists already. Push the new entity value into the same
-              // entity.
-              messageEntities[bodyEntities[i].entity].push(
-                bodyEntities[i].value);
-            } else {
-              // This is a new entity. Add it to message entities.
-              messageEntities[bodyEntities[i].entity] =
-                [bodyEntities[i].value];
-            }
-          }
-
-          // intent.entities = messageEntities;
+                 // intent.entities = messageEntities;
           message.intent = intent;
-          message.entities = messageEntities;
+          message.entities = bodyEntities;
         }
 
         next();
