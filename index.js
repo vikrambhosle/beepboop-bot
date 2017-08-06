@@ -36,7 +36,7 @@ if (token) {
 controller.hears(['hi'], ['ambient', 'direct_message','direct_mention','mention'], function (bot, message) {
   bot.reply(message, 'Hello.')
 })*/
-controller.hears(['device_failure'],'message_received', rasa.hears, function(bot, message) {
+controller.hears(['device_failure'],'direct_message,direct_mention,mention', rasa.hears, function(bot, message) {
     bot.reply(message, 'same old')
     //console.log('Intent:', message.intent);
    // console.log('Entities:', message.entities);  
