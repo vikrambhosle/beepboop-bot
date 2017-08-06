@@ -28,7 +28,7 @@ module.exports = function(config) {
       request.post(requestOptions, function (error, response, body) {
         // TODO
         // error handling
-        console.log(response)
+        console.log(body)
         if (body) {
           /* There will be only one intent for sentences of any length.
            * Ex query - "Hi. i am arjun. i have 102 fever"
