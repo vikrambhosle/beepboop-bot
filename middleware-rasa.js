@@ -79,6 +79,6 @@ module.exports = config => {
       })
     }
 
- 
+  }
   return middleware
 }
