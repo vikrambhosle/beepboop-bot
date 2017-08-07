@@ -38,13 +38,13 @@ controller.hears(['hi'], ['ambient', 'direct_message','direct_mention','mention'
 })*/
 controller.hears(['device_failure'],'direct_message,direct_mention,mention', rasa.hears, function(bot, message) {
     bot.reply(message, 'same old story boring character')
-    //console.log('Intent:', message.intent);
-   // console.log('Entities:', message.entities);  
+    console.log('Intent:', message.intent);
+    console.log('Entities:', message.entities);  
 
 });
 controller.hears(['greet'],'direct_message,direct_mention,mention', rasa.hears, function(bot, message) {
     bot.reply(message, 'hmm')
-    //console.log('Intent:', message.intent);
-   // console.log('Entities:', message.entities);  
+   console.log('Intent:', message.intent);
+    console.log('Entities:', message.entities);  
 
 });
