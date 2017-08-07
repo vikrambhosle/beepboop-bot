@@ -1,6 +1,9 @@
 var Botkit = require('botkit')
 var pg =require('pg')
 var rasa = require('./middleware-rasa.js')({rasa_uri: 'http://localhost:5000'});
+const connectionString = 'postgres://localhost:5432/postgres';
+const client = new pg.Client(connectionString);
+client.connect();
 
 
 var token = process.env.SLACK_TOKEN
@@ -42,10 +45,12 @@ controller.hears(['device_failure'],'direct_message,direct_mention,mention', ras
     console.log('Intent:', message.intent);
     console.log('Entities:', message.entities);  
 
+  
 });
 controller.hears(['greet'],'direct_message,direct_mention,mention', rasa.hears, function(bot, message) {
     bot.reply(message, 'hmm')
    console.log('Intent:', message.intent);
     console.log('Entities:', message.entities);  
-
+    client.query('INSERT INTO items(text) values($1)',[message.intent.name]);
+  
 });
