@@ -1,4 +1,5 @@
 var Botkit = require('botkit')
+var pg =require('pg')
 var rasa = require('./middleware-rasa.js')({rasa_uri: 'http://localhost:5000'});
 
 
