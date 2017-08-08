@@ -3,5 +3,5 @@
   "mitie_file": "/home/vikrambhosle402/botkit/MITIE-models/english/total_word_feature_extractor.dat",
   "path" : "/home/vikrambhosle402/models",
   "data" : "/home/vikrambhosle402/botkit/MITIE-models/english/training_data",
-  "spacy_model_name": "en"
+  "spacy_model_name": "/usr/local/lib/python2.7/dist-packages/spacy/data/en"
 }
