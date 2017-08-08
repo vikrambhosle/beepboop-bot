@@ -57,8 +57,6 @@ controller.hears(['device_failure'],'direct_message,direct_mention,mention', ras
   })
   
 });
-  
-});
 controller.hears(['greet'],'direct_message,direct_mention,mention', rasa.hears, function(bot, message) {
     bot.reply(message, 'hmm')
    console.log('Intent:', message.intent);
