@@ -47,9 +47,17 @@ controller.hears(['device_failure'],'direct_message,direct_mention,mention', ras
  
   bot.startConversation(message,function(err,convo) {
 
-    convo.ask('How are you?',function(response,convo) {
+    convo.ask('What is the work package name ?',function(response,convo) {
 
-      convo.say('Cool, you said: ' + response.text);
+      convo.say('Cool': ' + response.text);
+      convo.next();
+
+    });
+
+  })
+  convo.ask('Please give a short description ?',function(response,convo) {
+
+      convo.say('ok': ' + response.text);
       convo.next();
 
     });
