@@ -44,7 +44,19 @@ controller.hears(['device_failure'],'direct_message,direct_mention,mention', ras
     bot.reply(message, 'same old story boring character')
     console.log('Intent:', message.intent);
     console.log('Entities:', message.entities);  
+ 
+  bot.startConversation(message,function(err,convo) {
 
+    convo.ask('How are you?',function(response,convo) {
+
+      convo.say('Cool, you said: ' + response.text);
+      convo.next();
+
+    });
+
+  })
+  
+});
   
 });
 controller.hears(['greet'],'direct_message,direct_mention,mention', rasa.hears, function(bot, message) {
