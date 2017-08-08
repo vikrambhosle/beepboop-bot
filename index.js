@@ -49,7 +49,7 @@ controller.hears(['device_failure'],'direct_message,direct_mention,mention', ras
 
     convo.ask('What is the work package name ?',function(response,convo) {
 
-      convo.say('Cool': ' + response.text);
+      convo.say('Cool: ' + response.text);
       convo.next();
 
     });
