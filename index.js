@@ -57,7 +57,7 @@ controller.hears(['device_failure'],'direct_message,direct_mention,mention', ras
 
   convo.ask('Please give a short description ?',function(response,convo) {
 
-      convo.say('ok': ' + response.text);
+      convo.say('ok: ' + response.text);
       convo.next();
 
     });
