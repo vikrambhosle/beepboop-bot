@@ -45,7 +45,7 @@ controller.hears(['device_failure'],'direct_message,direct_mention,mention', ras
     console.log('Intent:', message.intent);
     console.log('Entities:', message.entities);  
  
-bot.startConversation(message,function(err,convo) {
+bot.startConversation(message,function(err,onvo) {
 
     convo.addQuestion('Shall we proceed Say YES, NO or DONE to quit.',[
       {
