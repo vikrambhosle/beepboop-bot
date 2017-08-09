@@ -42,8 +42,15 @@ if (token) {
 controller.hears(['hi'], ['ambient', 'direct_message','direct_mention','mention'], function (bot, message) {
   bot.reply(message, 'Hello.')
 })*/
-controller.on('bot_channel_join', function (bot) {
-bot.createConversation(message,function(err,onvo) {
+
+controller.on('bot_channel_join', function (bot, message) {
+  bot.reply(message, "Hey , how can I help you today ?")
+})
+controller.hears(['device_failure'],'direct_message,direct_mention,mention', rasa.hears, function(bot, message) {
+    bot.reply(message, 'same old story boring character')
+    console.log('Intent:', message.intent);
+    console.log('Entities:', message.entities);  
+ bot.createConversation(message,function(err,onvo) {
 
     onvo.addQuestion('Shall we proceed Say YES, NO or DONE to quit.',[
       {
@@ -80,20 +87,9 @@ bot.createConversation(message,function(err,onvo) {
       }
     ],{},'default');
 
-  })
-  })
-
-
-
-
-
-
-controller.hears(['device_failure'],'direct_message,direct_mention,mention', rasa.hears, function(bot, message) {
-    bot.reply(message, 'same old story boring character')
-    console.log('Intent:', message.intent);
-    console.log('Entities:', message.entities);  
+   onvo.activate();
  
-onvo.activate();
+})
 
   
 });
