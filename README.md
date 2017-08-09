@@ -1,4 +1,4 @@
-## Simple Slack Bot Tutorial 
+## Resource Guru Slackbot
 
 This code accompanies the following blog posts:
 
