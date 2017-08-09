@@ -5,7 +5,6 @@ const connectionString = 'postgres://postgres:postgres@localhost:5432/postgres';
 const client = new pg.Client(connectionString);
 client.connect();
 
-
 var token = process.env.SLACK_TOKEN
 
 var controller = Botkit.slackbot({
@@ -13,8 +12,6 @@ var controller = Botkit.slackbot({
   retry: Infinity,
   debug: false
 })
-
-
 
 controller.middleware.receive.use(rasa.receive);
 // Assume single team mode if we have a SLACK_TOKEN
@@ -50,8 +47,8 @@ controller.hears(['device_failure'],'direct_message,direct_mention,mention', ras
     bot.reply(message, 'same old story boring character')
     console.log('Intent:', message.intent);
     console.log('Entities:', message.entities);  
- bot.createConversation(message,function(err,onvo) {
 
+  bot.createConversation(message,function(err,onvo) {
     onvo.addQuestion('Shall we proceed Say YES, NO or DONE to quit.',[
       {
         pattern: 'done',
@@ -66,7 +63,6 @@ controller.hears(['device_failure'],'direct_message,direct_mention,mention', ras
           onvo.say('Great! I will continue...');
           // do something else...
           onvo.next();
-
         }
       },
       {
@@ -86,10 +82,10 @@ controller.hears(['device_failure'],'direct_message,direct_mention,mention', ras
         }
       }
     ],{},'default');
- 
+     onvo.activate();
 })
 
-    onvo.activate();
+
 });
 controller.hears(['greet'],'direct_message,direct_mention,mention', rasa.hears, function(bot, message) {
     bot.reply(message, 'hmm')
