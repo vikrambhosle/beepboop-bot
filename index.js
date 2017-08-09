@@ -42,7 +42,7 @@ if (token) {
 controller.hears(['hi'], ['ambient', 'direct_message','direct_mention','mention'], function (bot, message) {
   bot.reply(message, 'Hello.')
 })*/
-
+controller.on('bot_channel_join', function (bot) {
 bot.createConversation(message,function(err,onvo) {
 
     onvo.addQuestion('Shall we proceed Say YES, NO or DONE to quit.',[
@@ -80,6 +80,7 @@ bot.createConversation(message,function(err,onvo) {
       }
     ],{},'default');
 
+  })
   })
 
 
