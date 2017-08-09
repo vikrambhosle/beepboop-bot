@@ -45,24 +45,45 @@ controller.hears(['device_failure'],'direct_message,direct_mention,mention', ras
     console.log('Intent:', message.intent);
     console.log('Entities:', message.entities);  
  
-  bot.startConversation(message,function(err,convo) {
+bot.startConversation(message,function(err,convo) {
 
-    convo.ask('What is the work package name ?',function(response,convo) {
+    convo.addQuestion('Shall we proceed Say YES, NO or DONE to quit.',[
+      {
+        pattern: 'done',
+        callback: function(response,convo) {
+          convo.say('OK you are done!');
+          convo.next();
+        }
+      },
+      {
+        pattern: bot.utterances.yes,
+        callback: function(response,convo) {
+          convo.say('Great! I will continue...');
+          // do something else...
+          convo.next();
 
-      convo.say('Cool: ' + response.text);
-      convo.next();
-
-    });
-
-
-  convo.ask('Please give a short description ?',function(response,convo) {
-
-      convo.say('ok: ' + response.text);
-      convo.next();
-
-    });
+        }
+      },
+      {
+        pattern: bot.utterances.no,
+        callback: function(response,convo) {
+          convo.say('Perhaps later.');
+          // do something else...
+          convo.next();
+        }
+      },
+      {
+        default: true,
+        callback: function(response,convo) {
+          // just repeat the question
+          convo.repeat();
+          convo.next();
+        }
+      }
+    ],{},'default');
 
   })
+
   
 });
 controller.hears(['greet'],'direct_message,direct_mention,mention', rasa.hears, function(bot, message) {
