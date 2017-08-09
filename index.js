@@ -81,16 +81,16 @@ controller.hears(['device_failure'],'direct_message,direct_mention,mention', ras
           onvo.next();
         }
       }
-    ],{},'device_failure');
-  
-})
+    ],{},'default');
+  })
 });
+
 controller.hears(['greet'],'direct_message,direct_mention,mention', rasa.hears, function(bot, message) {
     bot.reply(message, 'hmm')
    console.log('Intent:', message.intent);
     console.log('Entities:', message.entities);  
     client.query('INSERT INTO items(text) values($1)',[message.intent.name]);
    bot.startConversation(message,function(err,convo) {
-     convo.gotoThread('device_failure')
+     convo.gotoThread('default')
    })
 });
