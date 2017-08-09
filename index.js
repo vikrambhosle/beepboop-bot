@@ -49,10 +49,11 @@ controller.hears(['device_failure'],'direct_message,direct_mention,mention', ras
     console.log('Entities:', message.entities);  
 
   bot.startConversation(message,function(err,onvo) {
-    onvo.addQuestion('Shall we proceed Say YES, NO or DONE to quit.',[
+    onvo.addQuestion('Sure, the WP needs to be create in which of the following contracts ?',[
       {
         pattern: 'done',
         callback: function(response,onvo) {
+          console.log('Intent:', response.intent)
           onvo.say('OK you are done!');
           onvo.next();
         }
@@ -82,6 +83,9 @@ controller.hears(['device_failure'],'direct_message,direct_mention,mention', ras
         }
       }
     ],{},'default');
+    
+    
+    
   })
 });
 
