@@ -47,10 +47,10 @@ controller.hears(['device_failure'],'direct_message,direct_mention,mention', ras
  
 bot.startConversation(message,function(err,onvo) {
 
-    convo.addQuestion('Shall we proceed Say YES, NO or DONE to quit.',[
+    onvo.addQuestion('Shall we proceed Say YES, NO or DONE to quit.',[
       {
         pattern: 'done',
-        callback: function(response,onvo) {
+        callback: function(response,convo) {
           onvo.say('OK you are done!');
           onvo.next();
         }
