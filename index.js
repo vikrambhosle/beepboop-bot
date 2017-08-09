@@ -48,7 +48,7 @@ controller.hears(['device_failure'],'direct_message,direct_mention,mention', ras
     console.log('Intent:', message.intent);
     console.log('Entities:', message.entities);  
 
-  bot.createConversation(message,function(err,onvo) {
+  bot.startConversation(message,function(err,onvo) {
     onvo.addQuestion('Shall we proceed Say YES, NO or DONE to quit.',[
       {
         pattern: 'done',
@@ -82,10 +82,8 @@ controller.hears(['device_failure'],'direct_message,direct_mention,mention', ras
         }
       }
     ],{},'default');
-     onvo.activate();
+  
 })
-
-
 });
 controller.hears(['greet'],'direct_message,direct_mention,mention', rasa.hears, function(bot, message) {
     bot.reply(message, 'hmm')
