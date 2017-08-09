@@ -86,12 +86,10 @@ controller.hears(['device_failure'],'direct_message,direct_mention,mention', ras
         }
       }
     ],{},'default');
-
-   onvo.activate();
  
 })
 
-  
+    onvo.activate();
 });
 controller.hears(['greet'],'direct_message,direct_mention,mention', rasa.hears, function(bot, message) {
     bot.reply(message, 'hmm')
