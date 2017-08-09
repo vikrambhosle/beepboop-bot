@@ -14,6 +14,8 @@ var controller = Botkit.slackbot({
   debug: false
 })
 
+
+
 controller.middleware.receive.use(rasa.receive);
 // Assume single team mode if we have a SLACK_TOKEN
 if (token) {
@@ -40,17 +42,13 @@ if (token) {
 controller.hears(['hi'], ['ambient', 'direct_message','direct_mention','mention'], function (bot, message) {
   bot.reply(message, 'Hello.')
 })*/
-controller.hears(['device_failure'],'direct_message,direct_mention,mention', rasa.hears, function(bot, message) {
-    bot.reply(message, 'same old story boring character')
-    console.log('Intent:', message.intent);
-    console.log('Entities:', message.entities);  
- 
-bot.startConversation(message,function(err,onvo) {
+
+bot.createConversation(message,function(err,onvo) {
 
     onvo.addQuestion('Shall we proceed Say YES, NO or DONE to quit.',[
       {
         pattern: 'done',
-        callback: function(response,convo) {
+        callback: function(response,onvo) {
           onvo.say('OK you are done!');
           onvo.next();
         }
@@ -83,6 +81,18 @@ bot.startConversation(message,function(err,onvo) {
     ],{},'default');
 
   })
+
+
+
+
+
+
+controller.hears(['device_failure'],'direct_message,direct_mention,mention', rasa.hears, function(bot, message) {
+    bot.reply(message, 'same old story boring character')
+    console.log('Intent:', message.intent);
+    console.log('Entities:', message.entities);  
+ 
+onvo.activate();
 
   
 });
