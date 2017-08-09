@@ -50,34 +50,34 @@ bot.startConversation(message,function(err,convo) {
     convo.addQuestion('Shall we proceed Say YES, NO or DONE to quit.',[
       {
         pattern: 'done',
-        callback: function(response,convo) {
-          convo.say('OK you are done!');
-          convo.next();
+        callback: function(response,onvo) {
+          onvo.say('OK you are done!');
+          onvo.next();
         }
       },
       {
         pattern: bot.utterances.yes,
-        callback: function(response,convo) {
-          convo.say('Great! I will continue...');
+        callback: function(response,onvo) {
+          onvo.say('Great! I will continue...');
           // do something else...
-          convo.next();
+          onvo.next();
 
         }
       },
       {
         pattern: bot.utterances.no,
-        callback: function(response,convo) {
-          convo.say('Perhaps later.');
+        callback: function(response,onvo) {
+          onvo.say('Perhaps later.');
           // do something else...
-          convo.next();
+          onvo.next();
         }
       },
       {
         default: true,
-        callback: function(response,convo) {
+        callback: function(response,onvo) {
           // just repeat the question
-          convo.repeat();
-          convo.next();
+          onvo.repeat();
+          onvo.next();
         }
       }
     ],{},'default');
