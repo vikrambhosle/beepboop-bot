@@ -54,7 +54,7 @@ controller.hears(['device_failure'],'direct_message,direct_mention,mention', ras
         pattern: ['.'],
         callback: function(response,onvo) {
           console.log('Intent:', response.intent);
-          if( response.intent='device_failure') {
+          if( response.intent.name='device_failure') {
           onvo.say('OK We can talk later ');
           onvo.next();
         } else {
