@@ -51,29 +51,21 @@ controller.hears(['device_failure'],'direct_message,direct_mention,mention', ras
   bot.startConversation(message,function(err,onvo) {
     onvo.addQuestion('Sure, Give me a short description of the WP scope',[
       {
-        pattern: ['t[eo]d'],
+        pattern: ['.'],
         callback: function(response,onvo) {
-          console.log('Intent:', response.intent)
-          onvo.say('OK you are done!');
+          if( response.intent='device_failure') {
+          onvo.say('OK We can talk later ');
           onvo.next();
+        } else {
+          onvo.say(' OK I ve noted that ');
+          onvo.next();
+            }
+           
+          
+          
         }
       },
-      {
-        pattern: bot.utterances.yes,
-        callback: function(response,onvo) {
-          onvo.say('Great! I will continue...');
-          // do something else...
-          onvo.next();
-        }
-      },
-      {
-        pattern: bot.utterances.no,
-        callback: function(response,onvo) {
-          onvo.say('Perhaps later.');
-          // do something else...
-          onvo.next();
-        }
-      },
+
       {
         default: true,
         callback: function(response,onvo) {
