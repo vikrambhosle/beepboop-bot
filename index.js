@@ -51,7 +51,7 @@ controller.hears(['device_failure'],'direct_message,direct_mention,mention', ras
   bot.startConversation(message,function(err,onvo) {
     onvo.addQuestion('Sure, Give me a short description of the WP scope',[
       {
-        pattern: ['/^.{1,2}$/'],
+        pattern: '/^.{1,2}$/',
         callback: function(response,onvo) {
           console.log('Intent:', response.intent)
           onvo.say('OK you are done!');
