@@ -18,7 +18,7 @@
 					"start": 10,
 					"end": 21,
 					"value": "work package",
-					"entity": "work package"
+					"entity": "workpackage"
 				}]
 			},
 			{
@@ -28,7 +28,7 @@
 					"start": 17,
 					"end": 28,
 					"value": "work package",
-					"entity": "work package"
+					"entity": "workpackage"
 				}]
 			},
 
@@ -39,7 +39,7 @@
 					"start": 14,
 					"end": 25,
 					"value": "work package",
-					"entity": "work package"
+					"entity": "workpackage"
 				}]
 
 			},
