@@ -49,9 +49,9 @@ controller.hears(['device_failure'],'direct_message,direct_mention,mention', ras
     console.log('Entities:', message.entities);  
 
   bot.startConversation(message,function(err,onvo) {
-    onvo.addQuestion('Sure, the WP needs to be create in which of the following contracts ?',[
+    onvo.addQuestion('Sure, Give me a short description of the WP scope',[
       {
-        pattern: 'done',
+        pattern: ['/^.{1,2}$/'],
         callback: function(response,onvo) {
           console.log('Intent:', response.intent)
           onvo.say('OK you are done!');
