@@ -53,6 +53,7 @@ controller.hears(['device_failure'],'direct_message,direct_mention,mention', ras
       {
         pattern: ['.'],
         callback: function(response,onvo) {
+          console.log('Intent:', response.intent);
           if( response.intent='device_failure') {
           onvo.say('OK We can talk later ');
           onvo.next();
@@ -60,10 +61,7 @@ controller.hears(['device_failure'],'direct_message,direct_mention,mention', ras
           onvo.say(' OK I ve noted that ');
           onvo.next();
             }
-           
-          
-          
-        }
+              }
       },
 
       {
