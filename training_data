@@ -16,7 +16,7 @@
 				"intent": "create_wp",
 				"entities": [{
 					"start": 10,
-					"end": 22,
+					"end": 21,
 					"value": "work package",
 					"entity": "work package"
 				}]
@@ -25,7 +25,7 @@
 				"text": "Please create a work package",
 				"intent": "create_wp",
 				"entities": [{
-					"start": 16,
+					"start": 17,
 					"end": 28,
 					"value": "work package",
 					"entity": "work package"
@@ -36,7 +36,7 @@
 				"text": "I have a new work package",
 				"intent": "create_wp",
 				"entities": [{
-					"start": 13,
+					"start": 14,
 					"end": 25,
 					"value": "work package",
 					"entity": "work package"
