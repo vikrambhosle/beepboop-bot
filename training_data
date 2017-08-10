@@ -11,19 +11,7 @@
 				"entities": []
 			},
 
-		      {
-        "text": "I am looking for mexican indian fusion",
-        "intent": "restaurant_search",
-        "entities": [
-          {
-            "start": 17,
-            "end": 38,
-            "value": "mexican indian fusion",
-            "entity": "cuisine"
-          }
-        ]
-},
-
+		     
       {
         "text": "create a work package",
         "intent": "create_wp",
@@ -37,7 +25,32 @@
         ]
 },
 
-			{
+
+      {
+        "text": "I have a new work package",
+        "intent": "create_wp",
+        "entities": [
+          {
+            "start": 13,
+            "end": 25,
+            "value": "work package",
+            "entity": "workpackage"
+          }
+        ]
+},
+      {
+        "text": "I have a new wp",
+        "intent": "create_wp",
+        "entities": [
+          {
+            "start": 13,
+            "end": 15,
+            "value": "wp",
+            "entity": "workpackage"
+          }
+        ]
+},
+	{
 				"text": "I dont know",
 				"intent": "dont_know",
 				"entities": []
