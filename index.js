@@ -44,10 +44,6 @@ controller.hears(['hi'], ['ambient', 'direct_message','direct_mention','mention'
   bot.reply(message, "Hey , how can I help you today ?")
 })*/
 controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hears, function(bot, message) {
-    bot.reply(message, 'same old story boring character')
-    console.log('Intent:', message.intent);
-    console.log('Entities:', message.entities); 
-
   bot.startConversation(message,function(err,onvo) {
     onvo.addQuestion('Give me a short description of the Work Package scope',[
       {
@@ -58,12 +54,11 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           onvo.say('I need a description to proceed');
           onvo.repeat();
            } else {
-          onvo.say(' OK I ve noted that ');
+          onvo.say('OK I ve noted that');
           onvo.next();
             }
               } },
-                
-      {
+                      {
         default: true,
         callback: function(response,onvo) {
           // just repeat the question
@@ -72,8 +67,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         }
       }
     ],{},'default');
-       
-  })
+         })
 });
 
 controller.hears(['greet'],'direct_message,direct_mention,mention', rasa.hears, function(bot, message) {
