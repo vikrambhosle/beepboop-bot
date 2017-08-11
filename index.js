@@ -61,8 +61,8 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           onvo.say(' OK I ve noted that ');
           onvo.next();
             }
-              }
-      },
+              },
+                
 
       {
         default: true,
@@ -73,9 +73,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         }
       }
     ],{},'default');
-    
-    
-    
+       
   })
 });
 
