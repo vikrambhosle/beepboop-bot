@@ -46,7 +46,7 @@ controller.hears(['hi'], ['ambient', 'direct_message','direct_mention','mention'
 controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hears, function(bot, message) {
     bot.reply(message, 'same old story boring character')
     console.log('Intent:', message.intent);
-    console.log('Entities:', message.entities); *
+    console.log('Entities:', message.entities); 
 
   bot.startConversation(message,function(err,onvo) {
     onvo.addQuestion('Give me a short description of the Work Package scope',[
