@@ -52,11 +52,9 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           console.log('Intent:', response.intent);
           if( response.intent.name=='dont_know') {
           onvo.say('I need a description to proceed');
-      
-           } else {
-          onvo.say('OK I ve noted that');
           onvo.next();
-            }
+          onvo.repeat();
+          }
               } },
                       {
         default: true,
