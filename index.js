@@ -43,20 +43,20 @@ controller.hears(['hi'], ['ambient', 'direct_message','direct_mention','mention'
 controller.on('bot_channel_join', function (bot, message) {
   bot.reply(message, "Hey , how can I help you today ?")
 })
-controller.hears(['device_failure'],'direct_message,direct_mention,mention', rasa.hears, function(bot, message) {
-    bot.reply(message, 'same old story boring character')
+controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hears, function(bot, message) {
+    /*bot.reply(message, 'same old story boring character')
     console.log('Intent:', message.intent);
-    console.log('Entities:', message.entities);  
+    console.log('Entities:', message.entities); */ 
 
   bot.startConversation(message,function(err,onvo) {
-    onvo.addQuestion('Sure, Give me a short description of the WP scope',[
+    onvo.addQuestion('Sure, Give me a short description of the Work Package scope',[
       {
         pattern: ['.'],
         callback: function(response,onvo) {
           console.log('Intent:', response.intent);
-          if( response.intent.name=='device_failure') {
-          onvo.say('OK We can talk later ');
-          onvo.next();
+          if( response.intent.name=='dont_know') {
+          onvo.say('I need some descritpion to proceed');
+          onvo.repeat();
         } else {
           onvo.say(' OK I ve noted that ');
           onvo.next();
