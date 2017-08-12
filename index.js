@@ -64,8 +64,9 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         pattern: ['.'],
         callback: function(response,onvo) {
           console.log('Intent:', response.intent);
-          if( response.intent.name=='dont_know') {
+          if(response.intent.name=='dont_know') {
           onvo.say('Ill ask you later');
+          onvo.next();
           onvo.gotoThread('wpheadcount')
                     }
            onvo.gotoThread('wpheadcount')
