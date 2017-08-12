@@ -1,5 +1,5 @@
 {
-  "name": "toy-slack-bot",
+  "name": "Resourceguru",
   "version": "1.0.0",
   "description": "A sample Node.js Slackbot",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "beepboop-botkit": "^1.4.0",
-    "botkit": "~0.1.1",
+    "botkit": "~0.1.2",
     "debug": "^2.6.8",
     "request": "^2.81.0",
     "request-promise": "^4.2.1",
