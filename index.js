@@ -66,7 +66,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         callback: function(response,onvo) {
           console.log('Intent:', response.intent, response.intent.name);
           if(response.intent.name=='dont_know') {
-          convo.transitionTo('wpamount','Ill ask you later');
+          onvo.transitionTo('wpamount','Ill ask you later');
         
                     }
           else{
