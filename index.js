@@ -239,7 +239,5 @@ controller.hears(['greet'],'direct_message,direct_mention,mention', rasa.hears, 
    console.log('Intent:', message.intent);
     console.log('Entities:', message.entities);  
     client.query('INSERT INTO items(text) values($1)',[message.intent.name]);
-   bot.startConversation(message,function(err,convo) {
-     convo.gotoThread('default')
-   })
+ 
 });
