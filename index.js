@@ -66,7 +66,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
       }
     ],{},'default');
     
-          onvo.addQuestion('Whats the JIRA Reference?',[
+        /*  onvo.addQuestion('Whats the JIRA Reference?',[
       {
         pattern: ['.'],
         callback: function(response,onvo) {
@@ -228,7 +228,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           onvo.next();
         }
       }
-    ],{},'ibmcontact');
+    ],{},'ibmcontact');*/
       
          })
 
