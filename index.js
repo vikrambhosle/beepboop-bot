@@ -55,18 +55,20 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           onvo.next();
           onvo.repeat();
           }
+          
+          onvo.gotoThread('wpjira')
               } },
          {
         default: true,
         callback: function(response,onvo) {
-          // just repeat the question
+          // just repeat the questionothrea
           onvo.repeat();
           onvo.next();
         }
       }
     ],{},'default');
     
-        /*  onvo.addQuestion('Whats the JIRA Reference?',[
+         onvo.addQuestion('Whats the JIRA Reference?',[
       {
         pattern: ['.'],
         callback: function(response,onvo) {
@@ -86,7 +88,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         }
       }
     ],{},'wpjira');
-  
+   /*
             onvo.addQuestion('What is the headcount expected?',[
       {
         pattern: ['.'],
