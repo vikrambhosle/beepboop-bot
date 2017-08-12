@@ -47,15 +47,15 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
   bot.startConversation(message,function(err,onvo) {
     onvo.addQuestion('Give me a short description of the Work Package scope',[
       {
-        pattern: ['.'],
+        pattern: ['dont_know'],
         callback: function(response,onvo) {
-          console.log('Intent:', response.intent);
-          if( response.intent.name=='dont_know') {
+          console.log('PIntent:', response.intent);
+          /*if( response.intent.name=='dont_know') {
           onvo.say('I need a description to proceed');
           onvo.repeat();
           }
           else{
-          onvo.gotoThread('wpjira')}
+          onvo.gotoThread('wpjira')}*/
               } }
         /* {
         default: true,
