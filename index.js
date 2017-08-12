@@ -219,10 +219,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
       }
     ],{},'bcontact');
       
-         })
-
-
-                      onvo.addQuestion('Who is the IBM Contact?',[
+         onvo.addQuestion('Who is the IBM Contact?',[
       {
         pattern: ['.'],
         callback: function(response,onvo) {
