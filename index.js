@@ -151,7 +151,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
       onvo.transitionTo('ibmcontact','Ill ask you later');
           }
            var bcontact = response.text  
-          onvo.gotoThread('ibmcontact')
+          
               } }],{},'bcontact');
       
          onvo.addQuestion('Who is the IBM Contact?',[
@@ -160,13 +160,19 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         callback: function(response,onvo) {
           console.log('Intent:', response.intent);
           if( response.intent.name=='dont_know') {
-         onvo.say('OK . Ill ask you later');
+         onvo.transitionTo('closing','OK.Ill ask you later');
             
           }
-          
-          onvo.say('Thanks . I have created the Work package.');
+          var ibmcontact = response.text  
+          onvo.gotoThread('closing');
           
               } }],{},'ibmcontact');
+    
+    
+    convo.addMessage( 'I saved the work package.Thank you.'},'closing');
+    
+      onvo.next()
+    
       onvo.activate()
          })
 
