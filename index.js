@@ -56,8 +56,8 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
             onvo.next();
           }
           else{
-              onvo.next();
-          //onvo.gotoThread('wpjira')
+           
+          onvo.gotoThread('wpjira')
           }
               } }],{},'default');
     
@@ -68,11 +68,10 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           console.log('Intent:', response.intent, response.intent.name);
           if(response.intent.name=='dont_know') {
           onvo.say('Ill ask you later');
-            onvo.repeat();
-          onvo.next();
-          //onvo.gotoThread('wpheadcount')
-                    }
            onvo.gotoThread('wpheadcount')
+                    }
+          else{
+           onvo.gotoThread('wpheadcount')}
               } }],{},'wpjira');
     
     
