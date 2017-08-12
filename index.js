@@ -56,7 +56,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           onvo.repeat();
           }
               } },
-                      {
+         {
         default: true,
         callback: function(response,onvo) {
           // just repeat the question
@@ -65,11 +65,177 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         }
       }
     ],{},'default');
+    
+          onvo.addQuestion('Whats the JIRA Reference?',[
+      {
+        pattern: ['.'],
+        callback: function(response,onvo) {
+          console.log('Intent:', response.intent);
+          if( response.intent.name=='dont_know') {
+          onvo.say('Ill ask you later');
+          onvo.next();
+          onvo.repeat();
+          }
+              } },
+         {
+        default: true,
+        callback: function(response,onvo) {
+          // just repeat the question
+          onvo.repeat();
+          onvo.next();
+        }
+      }
+    ],{},'wpjira');
+  
+            onvo.addQuestion('What is the headcount expected?',[
+      {
+        pattern: ['.'],
+        callback: function(response,onvo) {
+          console.log('Intent:', response.intent);
+          if( response.intent.name=='dont_know') {
+          onvo.say('OK . Ill ask you later');
+            
+          }
+              } },
+         {
+        default: true,
+        callback: function(response,onvo) {
+          // just repeat the question
+          onvo.repeat();
+          onvo.next();
+        }
+      }
+    ],{},'wpheadcount');
+    
+                  onvo.addQuestion('What is the Work package amount ?',[
+      {
+        pattern: ['.'],
+        callback: function(response,onvo) {
+          console.log('Intent:', response.intent);
+          if( response.intent.name=='dont_know') {
+         onvo.say('OK . Ill ask you later');
+            
+          }
+              } },
+         {
+        default: true,
+        callback: function(response,onvo) {
+          // just repeat the question
+          onvo.repeat();
+          onvo.next();
+        }
+      }
+    ],{},'wpamount');
+      
+        onvo.addQuestion('What is the Start Date?',[
+      {
+        pattern: ['.'],
+        callback: function(response,onvo) {
+          console.log('Intent:', response.intent);
+          if( response.intent.name=='dont_know') {
+         onvo.say('OK . Ill ask you later');
+            
+          }
+              } },
+         {
+        default: true,
+        callback: function(response,onvo) {
+          // just repeat the question
+          onvo.repeat();
+          onvo.next();
+        }
+      }
+    ],{},'wpstdate');
+    
+            onvo.addQuestion('What is the End Date?',[
+      {
+        pattern: ['.'],
+        callback: function(response,onvo) {
+          console.log('Intent:', response.intent);
+          if( response.intent.name=='dont_know') {
+         onvo.say('OK . Ill ask you later');
+            
+          }
+              } },
+         {
+        default: true,
+        callback: function(response,onvo) {
+          // just repeat the question
+          onvo.repeat();
+          onvo.next();
+        }
+      }
+    ],{},'wpenddate');
+      
+                onvo.addQuestion('Is this signed already?',[
+      {
+        pattern: ['.'],
+        callback: function(response,onvo) {
+          console.log('Intent:', response.intent);
+          if( response.intent.name=='dont_know') {
+         onvo.say('OK . Ill ask you later');
+            
+          }
+              } },
+         {
+        default: true,
+        callback: function(response,onvo) {
+          // just repeat the question
+          onvo.repeat();
+          onvo.next();
+        }
+      }
+    ],{},'signed');
+      
+                      onvo.addQuestion('Who is the Barclays Contact?',[
+      {
+        pattern: ['.'],
+        callback: function(response,onvo) {
+          console.log('Intent:', response.intent);
+          if( response.intent.name=='dont_know') {
+         onvo.say('OK . Ill ask you later');
+            
+          }
+              } },
+         {
+        default: true,
+        callback: function(response,onvo) {
+          // just repeat the question
+          onvo.repeat();
+          onvo.next();
+        }
+      }
+    ],{},'bcontact');
+      
          })
+
+
+                      onvo.addQuestion('Who is the IBM Contact?',[
+      {
+        pattern: ['.'],
+        callback: function(response,onvo) {
+          console.log('Intent:', response.intent);
+          if( response.intent.name=='dont_know') {
+         onvo.say('OK . Ill ask you later');
+            
+          }
+              } },
+         {
+        default: true,
+        callback: function(response,onvo) {
+          // just repeat the question
+          onvo.repeat();
+          onvo.next();
+        }
+      }
+    ],{},'ibmcontact');
+      
+         })
+
 });
 
 controller.hears(['greet'],'direct_message,direct_mention,mention', rasa.hears, function(bot, message) {
-    bot.reply(message, 'hmm')
+    bot.reply(message, 'Hello. How can I help you ?')
    console.log('Intent:', message.intent);
     console.log('Entities:', message.entities);  
     client.query('INSERT INTO items(text) values($1)',[message.intent.name]);
