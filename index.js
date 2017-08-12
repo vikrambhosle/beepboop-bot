@@ -169,7 +169,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
               } }],{},'ibmcontact');
     
     
-    convo.addMessage( 'I saved the work package.Thank you.','closing');
+    onvo.addMessage( 'I saved the work package.Thank you.','closing');
     
       onvo.next()
     
