@@ -78,6 +78,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           onvo.next();
           onvo.repeat();
           }
+           onvo.gotoThread('wpheadcount')
               } },
          {
         default: true,
@@ -88,8 +89,9 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         }
       }
     ],{},'wpjira');
-   /*
-            onvo.addQuestion('What is the headcount expected?',[
+    
+    
+       onvo.addQuestion('What is the headcount expected?',[
       {
         pattern: ['.'],
         callback: function(response,onvo) {
@@ -98,6 +100,8 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           onvo.say('OK . Ill ask you later');
             
           }
+          
+           onvo.gotoThread('wpamount')
               } },
          {
         default: true,
@@ -116,8 +120,9 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           console.log('Intent:', response.intent);
           if( response.intent.name=='dont_know') {
          onvo.say('OK . Ill ask you later');
-            
-          }
+             }
+           onvo.gotoThread('wpstdate')
+          
               } },
          {
         default: true,
@@ -138,6 +143,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
          onvo.say('OK . Ill ask you later');
             
           }
+           onvo.gotoThread('wpenddate')
               } },
          {
         default: true,
@@ -158,6 +164,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
          onvo.say('OK . Ill ask you later');
             
           }
+           onvo.gotoThread('signed')
               } },
          {
         default: true,
@@ -178,6 +185,8 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
          onvo.say('OK . Ill ask you later');
             
           }
+           onvo.gotoThread('bcontact')
+         
               } },
          {
         default: true,
@@ -198,6 +207,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
          onvo.say('OK . Ill ask you later');
             
           }
+          onvo.gotoThread('ibmcontact')
               } },
          {
         default: true,
@@ -221,6 +231,9 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
          onvo.say('OK . Ill ask you later');
             
           }
+          
+          onvo.say('Thanks . I have created the Work package.');
+          
               } },
          {
         default: true,
@@ -230,7 +243,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           onvo.next();
         }
       }
-    ],{},'ibmcontact');*/
+    ],{},'ibmcontact');
       
          })
 
