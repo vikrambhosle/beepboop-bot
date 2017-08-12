@@ -54,17 +54,17 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           onvo.say('I need a description to proceed');
           onvo.repeat();
           }
-          
-          onvo.gotoThread('wpjira')
-              } },
-         {
+          else{
+          onvo.gotoThread('wpjira')}
+              } }
+        /* {
         default: true,
         callback: function(response,onvo) {
           // just repeat the questionothrea
           onvo.repeat();
           onvo.next();
         }
-      }
+      }*/
     ],{},'default');
     
          onvo.addQuestion('Whats the JIRA Reference?',[
