@@ -57,16 +57,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           }
           else{
           onvo.gotoThread('wpjira')}
-              } }
-        /* {
-        default: true,
-        callback: function(response,onvo) {
-          // just repeat the questionothrea
-          onvo.repeat();
-          onvo.next();
-        }
-      }*/
-    ],{},'default');
+              } }],{},'default');
     
          onvo.addQuestion('Whats the JIRA Reference?',[
       {
@@ -78,16 +69,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           onvo.gotoThread('wpheadcount')
                     }
            onvo.gotoThread('wpheadcount')
-              } },
-         {
-        default: true,
-        callback: function(response,onvo) {
-          // just repeat the question
-          onvo.repeat();
-          onvo.next();
-        }
-      }
-    ],{},'wpjira');
+              } }],{},'wpjira');
     
     
        onvo.addQuestion('What is the headcount expected?',[
@@ -99,20 +81,10 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           onvo.say('OK . Ill ask you later');
             onvo.gotoThread('wpamount')
           }
-          
            onvo.gotoThread('wpamount')
-              } },
-         {
-        default: true,
-        callback: function(response,onvo) {
-          // just repeat the question
-          onvo.repeat();
-          onvo.next();
-        }
-      }
-    ],{},'wpheadcount');
+              } }],{},'wpheadcount');
     
-                  onvo.addQuestion('What is the Work package amount ?',[
+       onvo.addQuestion('What is the Work package amount ?',[
       {
         pattern: ['.'],
         callback: function(response,onvo) {
@@ -123,16 +95,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
              }
            onvo.gotoThread('wpstdate')
           
-              } },
-         {
-        default: true,
-        callback: function(response,onvo) {
-          // just repeat the question
-          onvo.repeat();
-          onvo.next();
-        }
-      }
-    ],{},'wpamount');
+              } }],{},'wpamount');
       
         onvo.addQuestion('What is the Start Date?',[
       {
@@ -144,16 +107,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
               onvo.gotoThread('wpenddate')
           }
            onvo.gotoThread('wpenddate')
-              } },
-         {
-        default: true,
-        callback: function(response,onvo) {
-          // just repeat the question
-          onvo.repeat();
-          onvo.next();
-        }
-      }
-    ],{},'wpstdate');
+              } }],{},'wpstdate');
     
             onvo.addQuestion('What is the End Date?',[
       {
@@ -166,16 +120,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
             
           }
            onvo.gotoThread('signed')
-              } },
-         {
-        default: true,
-        callback: function(response,onvo) {
-          // just repeat the question
-          onvo.repeat();
-          onvo.next();
-        }
-      }
-    ],{},'wpenddate');
+              } }],{},'wpenddate');
       
                 onvo.addQuestion('Is this signed already?',[
       {
@@ -188,18 +133,9 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           }
            onvo.gotoThread('bcontact')
          
-              } },
-         {
-        default: true,
-        callback: function(response,onvo) {
-          // just repeat the question
-          onvo.repeat();
-          onvo.next();
-        }
-      }
-    ],{},'signed');
+              } }],{},'signed');
       
-                      onvo.addQuestion('Who is the Barclays Contact?',[
+       onvo.addQuestion('Who is the Barclays Contact?',[
       {
         pattern: ['.'],
         callback: function(response,onvo) {
@@ -209,16 +145,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
             onvo.gotoThread('ibmcontact') 
           }
           onvo.gotoThread('ibmcontact')
-              } },
-         {
-        default: true,
-        callback: function(response,onvo) {
-          // just repeat the question
-          onvo.repeat();
-          onvo.next();
-        }
-      }
-    ],{},'bcontact');
+              } }],{},'bcontact');
       
          onvo.addQuestion('Who is the IBM Contact?',[
       {
@@ -232,16 +159,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           
           onvo.say('Thanks . I have created the Work package.');
           
-              } },
-         {
-        default: true,
-        callback: function(response,onvo) {
-          // just repeat the question
-          onvo.repeat();
-          onvo.next();
-        }
-      }
-    ],{},'ibmcontact');
+              } }],{},'ibmcontact');
       
          })
 
