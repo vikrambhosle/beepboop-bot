@@ -44,7 +44,7 @@ controller.hears(['hi'], ['ambient', 'direct_message','direct_mention','mention'
   bot.reply(message, "Hey , how can I help you today ?")
 })*/
 controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hears, function(bot, message) {
-  bot.startConversation(message,function(err,onvo) {
+  bot.createConversation(message,function(err,onvo) {
     onvo.addQuestion('Give me a short description of the Work Package scope',[
       {
         pattern: ['.'],
@@ -53,11 +53,10 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           if(response.intent.name=='dont_know') {
           onvo.say('I need a description to proceed');
           onvo.repeat();
-            onvo.next();
+          onvo.next();
           }
           else{
-           onvo.next();
-          //onvo.gotoThread('wpjira')
+          onvo.gotoThread('wpjira')
           }
               } }],{},'default');
     
@@ -68,12 +67,10 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           console.log('Intent:', response.intent, response.intent.name);
           if(response.intent.name=='dont_know') {
           onvo.say('Ill ask you later');
-           onvo.next();
-            //onvo.gotoThread('wpamount')
+          onvo.gotoThread('wpamount')
                     }
           else{
-           onvo.next();
-            //onvo.gotoThread('wpheadcount')
+               onvo.gotoThread('wpheadcount')
           }
               } }],{},'wpjira');
     
@@ -166,7 +163,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           onvo.say('Thanks . I have created the Work package.');
           
               } }],{},'ibmcontact');
-      
+      onvo.activate()
          })
 
 });
