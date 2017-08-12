@@ -68,7 +68,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           console.log('Intent:', response.intent, response.intent.name);
           if(response.intent.name=='dont_know') {
           onvo.say('Ill ask you later');
-           onvo.gotoThread('wpheadcount')
+           onvo.gotoThread('wpamount')
                     }
           else{
            onvo.gotoThread('wpheadcount')}
