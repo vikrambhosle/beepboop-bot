@@ -57,7 +57,8 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           }
           else{
               onvo.next();
-          //onvo.gotoThread('wpjira')}
+          //onvo.gotoThread('wpjira')
+          }
               } }],{},'default');
     
          onvo.addQuestion('Whats the JIRA Reference?',[
