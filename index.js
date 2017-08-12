@@ -56,6 +56,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           onvo.next();
           }
           else{
+          var wpdesc= response.text  
           onvo.gotoThread('wpjira')
           }
               } }],{},'default');
@@ -66,10 +67,11 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         callback: function(response,onvo) {
           console.log('Intent:', response.intent, response.intent.name);
           if(response.intent.name=='dont_know') {
-          onvo.transitionTo('wpamount','Ill ask you later');
+          onvo.transitionTo('wpheadcount','No problem.Ill ask you later');
         
                     }
           else{
+               var wpjira = response.text  
                onvo.gotoThread('wpheadcount')
           }
               } }],{},'wpjira');
@@ -81,9 +83,9 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         callback: function(response,onvo) {
           console.log('Intent:', response.intent);
           if( response.intent.name=='dont_know') {
-          onvo.say('OK . Ill ask you later');
-            onvo.gotoThread('wpamount')
+          onvo.transitionTo('wpamount','No problem.Ill ask you later');
           }
+          var wphc = response.text 
            onvo.gotoThread('wpamount')
               } }],{},'wpheadcount');
     
@@ -93,10 +95,11 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         callback: function(response,onvo) {
           console.log('Intent:', response.intent);
           if( response.intent.name=='dont_know') {
-         onvo.say('OK . Ill ask you later');
-              onvo.gotoThread('wpstdate')
+         
+         onvo.transitionTo('wpstdate','No problem.Ill ask you later');
              }
-           onvo.gotoThread('wpstdate')
+           var wpamount = response.text  
+          onvo.gotoThread('wpstdate')
           
               } }],{},'wpamount');
       
@@ -106,9 +109,10 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         callback: function(response,onvo) {
           console.log('Intent:', response.intent);
           if( response.intent.name=='dont_know') {
-         onvo.say('OK . Ill ask you later');
-              onvo.gotoThread('wpenddate')
+       onvo.transitionTo('wpenddate','No problem.Ill ask you later');
           }
+          
+          var wpstdate = response.text  
            onvo.gotoThread('wpenddate')
               } }],{},'wpstdate');
     
@@ -118,10 +122,10 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         callback: function(response,onvo) {
           console.log('Intent:', response.intent);
           if( response.intent.name=='dont_know') {
-         onvo.say('OK . Ill ask you later');
-             onvo.gotoThread('signed')
-            
+       onvo.transitionTo('signed','No problem.Ill ask you later');
+                       
           }
+           var wpenddate = response.text  
            onvo.gotoThread('signed')
               } }],{},'wpenddate');
       
@@ -131,9 +135,9 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         callback: function(response,onvo) {
           console.log('Intent:', response.intent);
           if( response.intent.name=='dont_know') {
-         onvo.say('OK . Ill ask you later');
-            onvo.gotoThread('bcontact') 
+     onvo.transitionTo('bcontact','No problem.Ill ask you later');
           }
+           var wpstatus = response.text  
            onvo.gotoThread('bcontact')
          
               } }],{},'signed');
@@ -144,9 +148,9 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         callback: function(response,onvo) {
           console.log('Intent:', response.intent);
           if( response.intent.name=='dont_know') {
-         onvo.say('OK . Ill ask you later');
-            onvo.gotoThread('ibmcontact') 
+      onvo.transitionTo('ibmcontact','Ill ask you later');
           }
+           var bcontact = response.text  
           onvo.gotoThread('ibmcontact')
               } }],{},'bcontact');
       
