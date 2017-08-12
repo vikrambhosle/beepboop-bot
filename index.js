@@ -47,7 +47,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
   bot.startConversation(message,function(err,onvo) {
     onvo.addQuestion('Give me a short description of the Work Package scope',[
       {
-        pattern: ['dont_know'],
+        pattern: ['.'],
         callback: function(response,onvo) {
           console.log('PIntent:', response.intent);
           /*if( response.intent.name=='dont_know') {
