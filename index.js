@@ -52,7 +52,6 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           console.log('Intent:', response.intent);
           if( response.intent.name=='dont_know') {
           onvo.say('I need a description to proceed');
-          onvo.next();
           onvo.repeat();
           }
           
@@ -75,9 +74,8 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           console.log('Intent:', response.intent);
           if( response.intent.name=='dont_know') {
           onvo.say('Ill ask you later');
-          onvo.next();
-          onvo.repeat();
-          }
+          onvo.gotoThread('wpheadcount')
+                    }
            onvo.gotoThread('wpheadcount')
               } },
          {
@@ -98,7 +96,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           console.log('Intent:', response.intent);
           if( response.intent.name=='dont_know') {
           onvo.say('OK . Ill ask you later');
-            
+            onvo.gotoThread('wpamount')
           }
           
            onvo.gotoThread('wpamount')
@@ -120,6 +118,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           console.log('Intent:', response.intent);
           if( response.intent.name=='dont_know') {
          onvo.say('OK . Ill ask you later');
+              onvo.gotoThread('wpstdate')
              }
            onvo.gotoThread('wpstdate')
           
@@ -141,7 +140,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           console.log('Intent:', response.intent);
           if( response.intent.name=='dont_know') {
          onvo.say('OK . Ill ask you later');
-            
+              onvo.gotoThread('wpenddate')
           }
            onvo.gotoThread('wpenddate')
               } },
@@ -162,6 +161,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           console.log('Intent:', response.intent);
           if( response.intent.name=='dont_know') {
          onvo.say('OK . Ill ask you later');
+             onvo.gotoThread('signed')
             
           }
            onvo.gotoThread('signed')
@@ -183,7 +183,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           console.log('Intent:', response.intent);
           if( response.intent.name=='dont_know') {
          onvo.say('OK . Ill ask you later');
-            
+            onvo.gotoThread('bcontact') 
           }
            onvo.gotoThread('bcontact')
          
@@ -205,7 +205,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           console.log('Intent:', response.intent);
           if( response.intent.name=='dont_know') {
          onvo.say('OK . Ill ask you later');
-            
+            onvo.gotoThread('ibmcontact') 
           }
           onvo.gotoThread('ibmcontact')
               } },
