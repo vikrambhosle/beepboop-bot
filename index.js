@@ -176,7 +176,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
               } }],{},'ibmcontact');
     
     
-   onvo.beforeThread('closing', function(onvo, next) {
+   onvo.beforeThread('closing', function(onvo, next,wpjira,wpdesc) {
    client.query('INSERT INTO workpackage(ContractId,JiraRef,Description,StartDate,EndDate,Headcount,WPAmount,Status,SubmittedOn,BarclaysContact,IBMContact,	LastUpdateDate,UserName) values($1,$2,$3)',['test',wpjira,wpdesc]);
      next()
  /*    // do something complex here
