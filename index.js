@@ -172,7 +172,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           else{
           var ibmcontact = response.text  
           onvo.gotoThread('closing');
-          ]
+          }
               } }],{},'ibmcontact');
     
     
