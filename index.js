@@ -156,7 +156,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           }
           else {
            var bcontact = response.text  
-           onvo.gotoThread('bcontact')
+           onvo.gotoThread('ibmcontact')
           }
               } }],{},'bcontact');
       
