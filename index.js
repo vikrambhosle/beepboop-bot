@@ -195,12 +195,12 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
     
    onvo.beforeThread('closing', function(onvo, next) {
    //wpjira,wpdesc,wphc,wpamount,wpstdate,wpenddate,wpstatus,bcontact,ibmcontact,dd,user
-     /*client.query('INSERT INTO workpackage(ContractId,JiraRef,Description,StartDate,EndDate,Headcount,WPAmount,Status,SubmittedOn,BarclaysContact,IBMContact,	LastUpdateDate,UserName) values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13);',
+     client.query('INSERT INTO workpackage(ContractId,JiraRef,Description,StartDate,EndDate,Headcount,WPAmount,Status,SubmittedOn,BarclaysContact,IBMContact,	LastUpdateDate,UserName) values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13);',
                 ['test',wpjira.toString(),wpdesc.toString(),wpstdate.toString(), wpenddate.toString(),wphc.toString(),wpamount.toString(),wpstatus.toString(),dd.toString(),bcontact.toString(),ibmcontact.toString(),dd.toString(),user.toString()]);
-     */
+     
      console.log('jira:',wpjira)
      
-     client.query("INSERT INTO workpackage(ContractId,JiraRef,Description) values('test',wpjira,wpdesc);");
+    // client.query("INSERT INTO workpackage(ContractId,JiraRef,Description) values('test',wpjira,wpdesc);");
      
      next()
  /*    // do something complex here
