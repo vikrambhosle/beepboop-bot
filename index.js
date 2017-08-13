@@ -71,7 +71,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           }
           else{
           
-          var wpdesc= response.text  
+         wpdesc= response.text  
           console.log('yoyo',wpdesc)
           onvo.gotoThread('wpjira')
           }
@@ -87,7 +87,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         
                     }
           else{
-               var wpjira = response.text  
+               wpjira = response.text  
                onvo.gotoThread('wpheadcount')
           }
               } }],{},'wpjira');
@@ -103,7 +103,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           }
           else {
          
-          var wphc = response.text 
+          wphc = response.text 
            onvo.gotoThread('wpamount')}
               } }],{},'wpheadcount');
     
@@ -117,7 +117,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
          onvo.transitionTo('wpstdate','No problem.Ill ask you later');
              }
           else{
-           var wpamount = response.text  
+           wpamount = response.text  
           onvo.gotoThread('wpstdate')}
           
               } }],{},'wpamount');
@@ -131,7 +131,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
        onvo.transitionTo('wpenddate','No problem.Ill ask you later');
           }
           else {
-          var wpstdate = response.text  
+        wpstdate = response.text  
            onvo.gotoThread('wpenddate')}
               } }],{},'wpstdate');
     
@@ -145,7 +145,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
                        
           }
           else {
-           var wpenddate = response.text  
+           wpenddate = response.text  
            onvo.gotoThread('signed')}
               } }],{},'wpenddate');
       
@@ -158,7 +158,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
      onvo.transitionTo('bcontact','No problem.Ill ask you later');
           }
           else {
-           var wpstatus = response.text  
+           wpstatus = response.text  
            onvo.gotoThread('bcontact')
           }
               } }],{},'signed');
@@ -172,7 +172,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           onvo.transitionTo('ibmcontact','Ill ask you later');
           }
           else {
-           var bcontact = response.text  
+           bcontact = response.text  
            onvo.gotoThread('ibmcontact')
           }
               } }],{},'bcontact');
@@ -187,7 +187,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
             
           }
           else{
-          var ibmcontact = response.text  
+        ibmcontact = response.text  
           onvo.gotoThread('closing');
           }
               } }],{},'ibmcontact');
