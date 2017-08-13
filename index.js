@@ -45,6 +45,9 @@ controller.hears(['hi'], ['ambient', 'direct_message','direct_mention','mention'
 })*/
 controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hears, function(bot, message) {
   bot.createConversation(message,function(err,onvo) {
+    var user = message.user;
+    var today = new Date();
+    var dd = today.getDate();
     onvo.addQuestion('Give me a short description of the Work Package scope',[
       {
         pattern: ['.'],
@@ -176,8 +179,9 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
               } }],{},'ibmcontact');
     
     
-   onvo.beforeThread('closing', function(onvo, next,wpjira,wpdesc) {
-   client.query('INSERT INTO workpackage(ContractId,JiraRef,Description,StartDate,EndDate,Headcount,WPAmount,Status,SubmittedOn,BarclaysContact,IBMContact,	LastUpdateDate,UserName) values($1,$2,$3)',['test',wpjira,wpdesc]);
+   onvo.beforeThread('closing', function(onvo, next,wpjira,wpdesc,wphc,wpamount,wpstdate,wpenddate,wpstatus,bcontact,ibmcontact,dd,user) {
+   client.query('INSERT INTO workpackage(ContractId,JiraRef,Description,StartDate,EndDate,Headcount,WPAmount,Status,SubmittedOn,BarclaysContact,IBMContact,	LastUpdateDate,UserName) values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13)',
+                ['test',wpjira,wpdesc,wpstdate, wpenddate,wphc,wpamount,wpstatus,dd,bcontact,ibmcontact,dd,user]);
      next()
  /*    // do something complex here
       myFakeFunction(name).then(function(results) {
