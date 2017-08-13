@@ -48,6 +48,15 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
     var user = message.user;
     var today = new Date();
     var dd = today.getDate();
+    var wpdesc=""
+    var wpjira="" 
+    var wphc =""
+    var wpamount ="" 
+    var wpstdate =""
+    var wpenddate =""
+    var bcontact =""
+    var ibmcontact=""
+        
     onvo.addQuestion('Give me a short description of the Work Package scope',[
       {
         pattern: ['.'],
