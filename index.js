@@ -85,8 +85,9 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           if( response.intent.name=='dont_know') {
           onvo.transitionTo('wpamount','No problem.Ill ask you later');
           }
+          else {
           var wphc = response.text 
-           onvo.gotoThread('wpamount')
+           onvo.gotoThread('wpamount')}
               } }],{},'wpheadcount');
     
        onvo.addQuestion('What is the Work package amount ?',[
@@ -98,8 +99,9 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
          
          onvo.transitionTo('wpstdate','No problem.Ill ask you later');
              }
+          else{
            var wpamount = response.text  
-          onvo.gotoThread('wpstdate')
+          onvo.gotoThread('wpstdate')}
           
               } }],{},'wpamount');
       
@@ -111,9 +113,9 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           if( response.intent.name=='dont_know') {
        onvo.transitionTo('wpenddate','No problem.Ill ask you later');
           }
-          
+          else {
           var wpstdate = response.text  
-           onvo.gotoThread('wpenddate')
+           onvo.gotoThread('wpenddate')}
               } }],{},'wpstdate');
     
             onvo.addQuestion('What is the End Date?',[
@@ -125,8 +127,9 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
        onvo.transitionTo('signed','No problem.Ill ask you later');
                        
           }
+          else {
            var wpenddate = response.text  
-           onvo.gotoThread('signed')
+           onvo.gotoThread('signed')}
               } }],{},'wpenddate');
       
                 onvo.addQuestion('Is this signed already?',[
@@ -137,9 +140,10 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           if( response.intent.name=='dont_know') {
      onvo.transitionTo('bcontact','No problem.Ill ask you later');
           }
+          else {
            var wpstatus = response.text  
            onvo.gotoThread('bcontact')
-         
+          }
               } }],{},'signed');
       
        onvo.addQuestion('Who is the Barclays Contact?',[
@@ -148,10 +152,12 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         callback: function(response,onvo) {
           console.log('Intent:', response.intent);
           if( response.intent.name=='dont_know') {
-      onvo.transitionTo('ibmcontact','Ill ask you later');
+          onvo.transitionTo('ibmcontact','Ill ask you later');
           }
+          else {
            var bcontact = response.text  
-          
+           onvo.gotoThread('bcontact')
+          }
               } }],{},'bcontact');
       
          onvo.addQuestion('Who is the IBM Contact?',[
@@ -163,9 +169,10 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
          onvo.transitionTo('closing','OK.Ill ask you later');
             
           }
+          else{
           var ibmcontact = response.text  
           onvo.gotoThread('closing');
-          
+          ]
               } }],{},'ibmcontact');
     
     
