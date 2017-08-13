@@ -169,7 +169,26 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
               } }],{},'ibmcontact');
     
     
-    onvo.addMessage( 'I saved the work package.Thank you.','closing');
+   convo.beforeThread('closing', function(convo, next) {
+   client.query('INSERT INTO workpackage(ContractId,JiraRef,Description,StartDate,EndDate,Headcount,WPAmount,Status,SubmittedOn,BarclaysContact,IBMContact,	LastUpdateDate,UserName) values($1,$2,$3)','test',wpjira,wpdesc);
+     next()
+ /*    // do something complex here
+      myFakeFunction(name).then(function(results) {
+  
+    convo.setVar('results',results);
+
+    // call next to continue to the secondary thread...
+    next();
+
+  }).catch(function(err) {
+    convo.setVar('error', err);
+    convo.gotoThread('error');
+    next(err); // pass an error because we changed threads again during this transition
+  });*/
+
+});
+    
+    onvo.addMessage( 'Thanks I have saved the work package.Thank you.','closing');
     
       onvo.next()
     
