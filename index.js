@@ -59,7 +59,9 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           onvo.next();
           }
           else{
+          
           var wpdesc= response.text  
+          console.log('yoyo',wpdesc)
           onvo.gotoThread('wpjira')
           }
               } }],{},'default');
@@ -89,6 +91,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
           onvo.transitionTo('wpamount','No problem.Ill ask you later');
           }
           else {
+         
           var wphc = response.text 
            onvo.gotoThread('wpamount')}
               } }],{},'wpheadcount');
