@@ -48,15 +48,15 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
     var user = message.user;
     var today = new Date();
     var dd = today.getDate();
-    var wpdesc=""
-    var wpjira="" 
-    var wphc =""
-    var wpamount ="" 
-    var wpstdate =""
-    var wpenddate =""
-     var wpstatus =""
-    var bcontact =""
-    var ibmcontact=""
+    var wpdesc=" "
+    var wpjira=" " 
+    var wphc =" "
+    var wpamount =" " 
+    var wpstdate =" "
+    var wpenddate =" "
+     var wpstatus =" "
+    var bcontact =" "
+    var ibmcontact=" "
         
     onvo.addQuestion('Give me a short description of the Work Package scope',[
       {
@@ -197,7 +197,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
                 ['test',wpjira.toString(),wpdesc.toString(),wpstdate.toString(), wpenddate.toString(),wphc.toString(),wpamount.toString(),wpstatus.toString(),dd.toString(),bcontact.toString(),ibmcontact.toString(),dd.toString(),user.toString()]);
      */
      
-     client.query('INSERT INTO workpackage(ContractId,JiraRef,Description) values($1,$2,$3);', ['test',wpjira.toString(),wpdesc.toString()]);
+     client.query('INSERT INTO workpackage(ContractId,JiraRef,Description) values($1,$2,$3);', ['test',wpjira,wpdesc]);
      
      next()
  /*    // do something complex here
