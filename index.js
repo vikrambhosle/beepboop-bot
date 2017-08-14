@@ -203,6 +203,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
                     console.log(err);
                 } else {
                    wpc=result.rows[0].wpid
+                   onvo.setVar=('wpc', wpcresponse.text)
                     console.log('row inserted with id: ' + result.rows[0].wpid);
                 }});
 
@@ -227,7 +228,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
 
 });
     
-    onvo.addMessage( 'I have created the work package'+wpc+'.','closing');
+    onvo.addMessage( 'I have created the work package {{vars.wpc}}','closing');
     
       onvo.next()
     
