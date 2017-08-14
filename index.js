@@ -204,8 +204,8 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
                 } else {
                    wpc=result.rows[0].ContractId
                     console.log('row inserted with id: ' + result.rows[0].ContractId);
-                });
-    result.rows[0].ContractId
+                }};
+
      console.log('jira:',wpjira)
      
     // client.query("INSERT INTO workpackage(ContractId,JiraRef,Description) values('test',wpjira,wpdesc);");
