@@ -202,8 +202,8 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
                 if (err) {
                     console.log(err);
                 } else {
-                   wpc=result.rows[0].ContractId
-                    console.log('row inserted with id: ' + result.rows[0].wpid);
+                   wpc=result.rows[0].WPId
+                    console.log('row inserted with id: ' + result.rows[0].WPId);
                 }});
 
      console.log('jira:',wpjira)
