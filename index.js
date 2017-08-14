@@ -65,7 +65,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         pattern: ['.'],
         callback: function(response,onvo) {
           console.log('PIntent:', response.intent, response.intent.name);
-          if(response.intent.name=='dont_know' && parseFloat(response.intent.confidence)>0.30 {
+          if(response.intent.name=='dont_know' && parseFloat(response.intent.confidence)>0.30) {
           onvo.say('I need a description to proceed');
           onvo.repeat();
           onvo.next();
