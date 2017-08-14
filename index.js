@@ -227,7 +227,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
 
 });
     
-    onvo.addMessage( 'I have created teh work package ${wpc}','closing');
+    onvo.addMessage( 'I have created the work package'+wpc+'.','closing');
     
       onvo.next()
     
