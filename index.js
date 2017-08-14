@@ -203,7 +203,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
                     console.log(err);
                 } else {
                    wpc=result.rows[0].wpid
-                   onvo.setVar=('wpc', wpcresponse.text)
+                   onvo.setVar=('wpc', wpc)
                     console.log('row inserted with id: ' + result.rows[0].wpid);
                 }});
 
