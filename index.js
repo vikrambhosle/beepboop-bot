@@ -197,8 +197,15 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
    onvo.beforeThread('closing', function(onvo, next) {
    //wpjira,wpdesc,wphc,wpamount,wpstdate,wpenddate,wpstatus,bcontact,ibmcontact,dd,user
      client.query('INSERT INTO workpackage(ContractId,JiraRef,Description,StartDate,EndDate,Headcount,WPAmount,Status,SubmittedOn,BarclaysContact,IBMContact,	LastUpdateDate,UserName) values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13)RETURNING ContractId;',
-                ['TEST',wpjira.toString(),wpdesc.toString(),wpstdate.toString(), wpenddate.toString(),wphc.toString(),wpamount.toString(),wpstatus.toString(),dd.toString(),bcontact.toString(),ibmcontact.toString(),dd.toString(),user.toString()]);
-     wpc=result.rows[0].ContractId
+                ['TEST',wpjira.toString(),wpdesc.toString(),wpstdate.toString(), wpenddate.toString(),wphc.toString(),wpamount.toString(),wpstatus.toString(),dd.toString(),bcontact.toString(),ibmcontact.toString(),dd.toString(),user.toString()],
+                function(err, result) {
+                if (err) {
+                    console.log(err);
+                } else {
+                   wpc=result.rows[0].ContractId
+                    console.log('row inserted with id: ' + result.rows[0].ContractId);
+                });
+    result.rows[0].ContractId
      console.log('jira:',wpjira)
      
     // client.query("INSERT INTO workpackage(ContractId,JiraRef,Description) values('test',wpjira,wpdesc);");
@@ -220,7 +227,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
 
 });
     
-    onvo.addMessage( 'Thanks I have saved the work package.Thank you.' + wpc,'closing');
+    onvo.addMessage( 'Thanks I have saved the work package' + wpc,'closing');
     
       onvo.next()
     
