@@ -65,7 +65,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         pattern: ['.'],
         callback: function(response,onvo) {
           console.log('PIntent:', response.intent, response.intent.name);
-          if(response.intent.name=='dont_know' && parseFloat(response.intent.confidence)>0.30) {
+          if(response.intent.name=='dont_know' && parseFloat(response.intent.confidence)>0.40) {
           onvo.say('I need a description to proceed');
           onvo.repeat();
           onvo.next();
@@ -83,7 +83,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         pattern: ['.'],
         callback: function(response,onvo) {
           console.log('Intent:', response.intent, response.intent.name);
-          if(response.intent.name=='dont_know'&& parseFloat(response.intent.confidence)>0.30) {
+          if(response.intent.name=='dont_know'&& parseFloat(response.intent.confidence)>0.40) {
           onvo.transitionTo('wpheadcount','No problem.Ill ask you later');
         
                     }
@@ -99,7 +99,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         pattern: ['.'],
         callback: function(response,onvo) {
           console.log('Intent:', response.intent);
-          if( response.intent.name=='dont_know'&& parseFloat(response.intent.confidence)>0.30) {
+          if( response.intent.name=='dont_know'&& parseFloat(response.intent.confidence)>0.40) {
           onvo.transitionTo('wpamount','No problem.Ill ask you later');
           }
           else {
@@ -113,7 +113,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         pattern: ['.'],
         callback: function(response,onvo) {
           console.log('Intent:', response.intent);
-          if( response.intent.name=='dont_know'&& parseFloat(response.intent.confidence)>0.30) {
+          if( response.intent.name=='dont_know'&& parseFloat(response.intent.confidence)>0.40) {
          
          onvo.transitionTo('wpstdate','No problem.Ill ask you later');
              }
@@ -128,7 +128,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         pattern: ['.'],
         callback: function(response,onvo) {
           console.log('Intent:', response.intent);
-          if( response.intent.name=='dont_know'&& parseFloat(response.intent.confidence)>0.30) {
+          if( response.intent.name=='dont_know'&& parseFloat(response.intent.confidence)>0.40) {
        onvo.transitionTo('wpenddate','No problem.Ill ask you later');
           }
           else {
@@ -141,7 +141,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         pattern: ['.'],
         callback: function(response,onvo) {
           console.log('Intent:', response.intent);
-          if( response.intent.name=='dont_know'&& parseFloat(response.intent.confidence)>0.30) {
+          if( response.intent.name=='dont_know'&& parseFloat(response.intent.confidence)>0.40) {
        onvo.transitionTo('signed','No problem.Ill ask you later');
                        
           }
@@ -155,7 +155,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         pattern: ['.'],
         callback: function(response,onvo) {
           console.log('Intent:', response.intent);
-          if( response.intent.name=='dont_know'&& parseFloat(response.intent.confidence)>0.30) {
+          if( response.intent.name=='dont_know'&& parseFloat(response.intent.confidence)>0.40) {
      onvo.transitionTo('bcontact','No problem.Ill ask you later');
           }
           else {
@@ -169,7 +169,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         pattern: ['.'],
         callback: function(response,onvo) {
           console.log('Intent:', response.intent);
-          if( response.intent.name=='dont_know'&& parseFloat(response.intent.confidence)>0.30) {
+          if( response.intent.name=='dont_know'&& parseFloat(response.intent.confidence)>0.40) {
           onvo.transitionTo('ibmcontact','Ill ask you later');
           }
           else {
@@ -183,7 +183,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         pattern: ['.'],
         callback: function(response,onvo) {
           console.log('Intent:', response.intent);
-          if( response.intent.name=='dont_know'&& parseFloat(response.intent.confidence)>0.30) {
+          if( response.intent.name=='dont_know'&& parseFloat(response.intent.confidence)>0.40) {
          onvo.transitionTo('closing','OK.Ill ask you later');
             
           }
