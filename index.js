@@ -227,7 +227,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
 
 });
     
-    onvo.addMessage( 'Thanks I have saved the work package' + wpc,'closing');
+    onvo.addMessage( "Thanks I have saved the work package:"+ wpc+".",'closing');
     
       onvo.next()
     
