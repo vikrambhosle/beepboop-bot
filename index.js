@@ -230,7 +230,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
 });
     
     console.log("wpc==",wpc);
-    onvo.addMessage( 'I have created the work package '+ wpc+','closing');
+    onvo.addMessage( 'I have created the work package '+ wpc,'closing');
     
       onvo.next()
     
