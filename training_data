@@ -1,17 +1,16 @@
 {
-	"rasa_nlu_data": {
-		"common_examples": [{
-				"text": "hi",
-				"intent": "greet",
-				"entities": []
-			},
-			{
-				"text": "Hello",
-				"intent": "greet",
-				"entities": []
-			},
-
-		     
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "text": "hi",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "Hello",
+        "intent": "greet",
+        "entities": []
+      },
       {
         "text": "create a work package",
         "intent": "create_wp",
@@ -23,9 +22,7 @@
             "entity": "workpackage"
           }
         ]
-},
-
-
+      },
       {
         "text": "I have a new work package",
         "intent": "create_wp",
@@ -37,7 +34,7 @@
             "entity": "workpackage"
           }
         ]
-},
+      },
       {
         "text": "I have a new wp",
         "intent": "create_wp",
@@ -49,45 +46,225 @@
             "entity": "workpackage"
           }
         ]
-},
-	{
-				"text": "I dont know",
-				"intent": "dont_know",
-				"entities": []
-
-			},
-			{
-				"text": "dont know",
-				"intent": "dont_know",
-				"entities": []
-			},
-
-			{
-				"text": "Ill tell later",
-				"intent": "dont_know",
-				"entities": []
-			},
-
-			{
-				"text": "my phone is not working.",
-				"intent": "device_failure",
-				"entities": [{
-					"start": 3,
-					"end": 8,
-					"value": "phone",
-					"entity": "device"
-				}]
-			},
-			{
-				"text": "My phone crashed and isn’t working anymore.",
-				"intent": "device_failure",
-				"entities": [{
-					"start": 3,
-					"end": 8,
-					"value": "phone",
-					"entity": "device"
-				}]
-			}
-		]
-	}
+      },
+      {
+        "text": "I dont know",
+        "intent": "dont_know",
+        "entities": []
+      },
+      {
+        "text": "dont know",
+        "intent": "dont_know",
+        "entities": []
+      },
+      {
+        "text": "Ill tell later",
+        "intent": "dont_know",
+        "entities": []
+      },
+      {
+        "text": "my phone is not working.",
+        "intent": "device_failure",
+        "entities": [
+          {
+            "start": 3,
+            "end": 8,
+            "value": "phone",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "My phone crashed and isn’t working anymore.",
+        "intent": "device_failure",
+        "entities": [
+          {
+            "start": 3,
+            "end": 8,
+            "value": "phone",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "Received a request from Pavan for a work package for 20 resources and 5000 pounds starting 12 Sep  2017",
+        "intent": "create_wp",
+        "entities": [
+          {
+            "start": 53,
+            "end": 65,
+            "value": "20 resources",
+            "entity": "headcount"
+          },
+          {
+            "start": 70,
+            "end": 81,
+            "value": "5000 pounds",
+            "entity": "amount"
+          },
+          {
+            "start": 35,
+            "end": 49,
+            "value": " work package ",
+            "entity": "workpackage"
+          },
+          {
+            "start": 82,
+            "end": 103,
+            "value": "starting 12 Sep  2017",
+            "entity": "startdate"
+          }
+        ]
+      },
+      {
+        "text": "Relationship Insights work package for same resource level extended to year end",
+        "intent": "create_wp",
+        "entities": []
+      },
+      {
+        "text": "Work package  for relationship Insights fro 10 folks for 450K",
+        "intent": "create_wp",
+        "entities": [
+          {
+            "start": 44,
+            "end": 52,
+            "value": "10 folks",
+            "entity": "headcount"
+          },
+          {
+            "start": 18,
+            "end": 39,
+            "value": "relationship Insights",
+            "entity": "project"
+          },
+          {
+            "start": 57,
+            "end": 61,
+            "value": "450K",
+            "entity": "amount"
+          }
+        ]
+      },
+      {
+        "text": "Please record a work package for Pavan. Jira is 1200 and amount 40000 pounds and 20  headcount",
+        "intent": "create_wp",
+        "entities": [
+          {
+            "start": 81,
+            "end": 94,
+            "value": "20  headcount",
+            "entity": "headcount"
+          },
+          {
+            "start": 40,
+            "end": 52,
+            "value": "Jira is 1200",
+            "entity": "jira"
+          },
+          {
+            "start": 15,
+            "end": 28,
+            "value": " work package",
+            "entity": "workpackage"
+          },
+          {
+            "start": 57,
+            "end": 76,
+            "value": "amount 40000 pounds",
+            "entity": "amount"
+          }
+        ]
+      },
+      {
+        "text": "Add work package for Data lineage, 12 ppl , start date 12 sep 2017 end date 12 dec 2017 JIRA ref 1234 headcount : 12 amount 20000",
+        "intent": "create_wp",
+        "entities": [
+          {
+            "start": 4,
+            "end": 16,
+            "value": "work package",
+            "entity": "workpackage"
+          },
+          {
+            "start": 20,
+            "end": 33,
+            "value": " Data lineage",
+            "entity": "project"
+          },
+          {
+            "start": 35,
+            "end": 42,
+            "value": "12 ppl ",
+            "entity": "headcount"
+          },
+          {
+            "start": 44,
+            "end": 66,
+            "value": "start date 12 sep 2017",
+            "entity": "startdate"
+          },
+          {
+            "start": 87,
+            "end": 101,
+            "value": " JIRA ref 1234",
+            "entity": "jira"
+          },
+          {
+            "start": 67,
+            "end": 87,
+            "value": "end date 12 dec 2017",
+            "entity": "enddate"
+          },
+          {
+            "start": 117,
+            "end": 129,
+            "value": "amount 20000",
+            "entity": "amount"
+          }
+        ]
+      },
+      {
+        "text": "Work package for data simplification , begins 1 jan 2018 till feb 2018, approx 12 resources , price 172 k",
+        "intent": "create_wp",
+        "entities": [
+          {
+            "start": 0,
+            "end": 12,
+            "value": "Work package",
+            "entity": "workpackage"
+          },
+          {
+            "start": 17,
+            "end": 36,
+            "value": "data simplification",
+            "entity": "project"
+          },
+          {
+            "start": 39,
+            "end": 56,
+            "value": "begins 1 jan 2018",
+            "entity": "startdate"
+          },
+          {
+            "start": 57,
+            "end": 70,
+            "value": "till feb 2018",
+            "entity": "enddate"
+          },
+          {
+            "start": 78,
+            "end": 91,
+            "value": " 12 resources",
+            "entity": "headcount"
+          },
+          {
+            "start": 93,
+            "end": 105,
+            "value": " price 172 k",
+            "entity": "amount"
+          }
+        ]
+      }
+    ]
+  }
 }
