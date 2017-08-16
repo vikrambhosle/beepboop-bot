@@ -103,16 +103,16 @@
             "entity": "amount"
           },
           {
-            "start": 35,
-            "end": 49,
-            "value": " work package ",
-            "entity": "workpackage"
-          },
-          {
             "start": 82,
             "end": 103,
             "value": "starting 12 Sep  2017",
             "entity": "startdate"
+          },
+          {
+            "start": 36,
+            "end": 48,
+            "value": "work package",
+            "entity": "workpackage"
           }
         ]
       },
@@ -186,28 +186,10 @@
             "entity": "workpackage"
           },
           {
-            "start": 20,
-            "end": 33,
-            "value": " Data lineage",
-            "entity": "project"
-          },
-          {
-            "start": 35,
-            "end": 42,
-            "value": "12 ppl ",
-            "entity": "headcount"
-          },
-          {
             "start": 44,
             "end": 66,
             "value": "start date 12 sep 2017",
             "entity": "startdate"
-          },
-          {
-            "start": 87,
-            "end": 101,
-            "value": " JIRA ref 1234",
-            "entity": "jira"
           },
           {
             "start": 67,
@@ -220,6 +202,24 @@
             "end": 129,
             "value": "amount 20000",
             "entity": "amount"
+          },
+          {
+            "start": 88,
+            "end": 101,
+            "value": "JIRA ref 1234",
+            "entity": "jira"
+          },
+          {
+            "start": 35,
+            "end": 41,
+            "value": "12 ppl",
+            "entity": "headcount"
+          },
+          {
+            "start": 21,
+            "end": 33,
+            "value": "Data lineage",
+            "entity": "project"
           }
         ]
       },
@@ -252,15 +252,15 @@
             "entity": "enddate"
           },
           {
-            "start": 78,
+            "start": 79,
             "end": 91,
-            "value": " 12 resources",
+            "value": "12 resources",
             "entity": "headcount"
           },
           {
-            "start": 93,
+            "start": 94,
             "end": 105,
-            "value": " price 172 k",
+            "value": "price 172 k",
             "entity": "amount"
           }
         ]
