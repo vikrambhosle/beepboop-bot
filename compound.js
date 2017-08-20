@@ -1,4 +1,4 @@
-var _ = require("underscore");
+var _ = require('underscore');
 
 var stru= '[{	"id": 100,	"title": "Tlt1",	"tax": [{		"name": "Tax1",		"id": 15	}, {		"name": "Tax1",		"id": 17	}]}, {	"id": 101,	"title": "Tlt2",	"tax": [{		"name": "Tax2",		"id": 16	}]}, {	"id": 102,	"title": "Tlt3",	"tax": [{		"name": "Tax3",		"id": 17	}, {		"name": "Tax3",		"id": 18	}]}]'
 
