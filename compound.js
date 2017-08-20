@@ -11,7 +11,7 @@ return _.some(a.tax,function(b){
 
 
 
-console.log(filtered)
+console.log(JSON.stringify(filtered))
 
 var even = _.find([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
 
