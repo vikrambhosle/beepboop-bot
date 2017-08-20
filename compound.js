@@ -6,7 +6,7 @@ var str = '{"model": "default", "time": "2017-08-19T13:09:40.445117", "user_inpu
 var obj = JSON.parse(str);
 var filtered = _.filter(obj.user_input, function(a){
     return _.some(a.entities,function(userinput){
-                 return userinput.extractor == 'ner_crf'});
+                 return userinput.extractor == 'ner_crf';});
 })
 var obju = JSON.parse(stru);
 console.log(JSON.stringify(filtered))
