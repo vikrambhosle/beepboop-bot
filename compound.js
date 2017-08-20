@@ -10,7 +10,7 @@ return _.some(a.tax,function(b){
     return b.id==15})})
 
 var filtereda = _.filter(obju, function(a){
-    return a.tax})
+    return _.some(a.tax)})
 
 console.log(JSON.stringify(filtered))
 console.log(JSON.stringify(filtereda))
