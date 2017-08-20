@@ -8,7 +8,6 @@ var obj = JSON.parse(str);
 var filtered = _.filter(obju, function(a){
 return  a.id==101})
 
-;})
 
 
 console.log(filtered)
