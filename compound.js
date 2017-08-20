@@ -8,8 +8,5 @@ var filtered = _.filter(obj, function(a){
     return _.some(a,{"extractor":"ner_crf"});
 })
 var obju = JSON.parse(stru);
-
-
-});
 console.log(JSON.stringify(filtered))
 
