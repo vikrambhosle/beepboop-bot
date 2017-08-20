@@ -3,5 +3,5 @@ var str = '{"model": "default", "time": "2017-08-19T13:09:40.445117", "user_inpu
 var obj = JSON.parse(str);
 console.log(obj)
 var filtered = _.where(obj, function(a){ return a.user_input.entities.extractor === "ner_crf";});
-console.log(filtered)
+console.log(JSON.stringify(filtered))
 
