@@ -9,9 +9,11 @@ var filtered = _.filter(obju, function(a){
 return _.some(a.tax,function(b){
     return b.id==15})})
 
-
+var filtereda = _.filter(obju.tax, function(a){
+    return a.id==15})
 
 console.log(JSON.stringify(filtered))
+console.log(JSON.stringify(filtereda))
 
 var even = _.find([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
 
