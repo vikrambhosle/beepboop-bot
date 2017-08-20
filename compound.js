@@ -10,7 +10,7 @@ var filtered = _.filter(obj, function(a){
 var obju = JSON.parse(stru);
 
 var filteredList = _.filter(stru, function(item){
-    return _.where(item.tax, { "id": 17 });
+    return _.where(item.tax, { id: 17 });
 });
 console.log(JSON.stringify(filteredList))
 
