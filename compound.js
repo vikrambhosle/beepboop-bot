@@ -10,6 +10,10 @@ var filtered = _.filter(obj.user_input, function(a){
 var obju = JSON.parse(stru);
 console.log(filtered)
 
+var even = _.find([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+
+console.log(even)
+
 /*_.filter(data.grouplist, function(n){ 
     return _.some(n.optionlist, function(option){ 
         return option.optionitem == "red";
