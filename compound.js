@@ -37,8 +37,10 @@ for(var i = 0; i < filter_ent.length; i++) {
     //srchare the duckling results
     
         if( metadata.search=="entities") {
+            console.log('hmm')
+            
     var filter_srch = _.filter(srch, function(x){
-    return  x.start.toInt >=start.toInt && x.end.toInt <=end.toInt && x.entity == metadata.type})
+    return  parseInt(x.start) >=parseInt(start) && parseInt(x.end) <=parseInt(end) && x.entity == metadata.type})
      }
     
     
