@@ -40,12 +40,12 @@ for(var i = 0; i < filter_ent.length; i++) {
     
         if( metadata.search=="entities") {
     var filter_srch = _.filter(srch, function(x){
-    return  x.start.toInt >=start.toInt && x.end.toInt <=end.toInt && x.type == })
+    return  x.start.toInt >=start.toInt && x.end.toInt <=end.toInt && x.entity == metadata.type})
      }
     
     
     ////
-    console.log(filter_ent);
+   // console.log(filter_ent);
     console.log('yo'+filter_srch);
 }
 
