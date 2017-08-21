@@ -44,7 +44,7 @@ for(var i = 0; i < filter_ent.length; i++) {
     
     ////
    // console.log(filter_ent);
-    console.log('yo'+filter_srch);
+    //console.log('yo'+filter_srch);
 }
 
 
