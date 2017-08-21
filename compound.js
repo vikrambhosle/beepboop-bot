@@ -32,7 +32,7 @@ for(var i = 0; i < filter_ent.length; i++) {
     return  w.ent==enti})
          
      console.log('yo'+ i+ JSON.stringify(metadata))
-     console.log(metadata[1].search)
+     console.log(metadata.search)
     //now searching for duckling results
     //srchare the duckling results
  
