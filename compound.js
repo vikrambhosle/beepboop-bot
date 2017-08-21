@@ -16,9 +16,6 @@ var srch = _.filter(obj, function(n){
     return  n.extractor=="ner_duckling"})
 //console.log(srch)
 
-
-var test = _.filter(JSON.parse(meta), function(w){
-    return  w.ent=="amount"})
 console.log(test)
 
 /*
@@ -32,6 +29,8 @@ for(var i = 0; i < filter_ent.length; i++) {
     var enti = filter_ent[i].entity
     
     
+    var metadata = _.filter(JSON.parse(meta), function(w){
+    return  w.ent==enti})
     
     var filter_srch = _.filter(srch, function(x){
     return  x.start.toInt >=start.toInt && x.end.toInt <=end.toInt })
