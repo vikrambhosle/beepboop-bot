@@ -17,6 +17,8 @@ var filter_ent = _.filter(obj, function(n){
 
 var srch = _.filter(obj, function(n){
     return  n.extractor=="ner_duckling"})
+console.log(srch)
+
 /*
 console.log(JSON.stringify(filtered))
 console.log(JSON.stringify(filtereda))
@@ -27,7 +29,7 @@ for(var i = 0; i < filter_ent.length; i++) {
     var end = filter_ent[i].end
 
     var filter_srch = _.filter(srch, function(x){
-    return  x.start.toInt >=start && x.end.toInt <=end })
+    return  x.start.toInt >=start.toInt && x.end.toInt <=end.toInt })
     
     
     console.log(filter_ent);
