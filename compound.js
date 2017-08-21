@@ -11,12 +11,10 @@ return _.some(a.tax,function(b){
 
 var filter_ent = _.filter(obj, function(n){
     return  n.extractor=="ner_crf"})
-
+// core  results
 var srch = _.filter(obj, function(n){
     return  n.extractor=="ner_duckling"})
-//console.log(srch)
-
-console.log(test)
+// duckling results
 
 /*
 console.log(JSON.stringify(filtered))
