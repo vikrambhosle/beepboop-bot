@@ -32,11 +32,11 @@ for(var i = 0; i < filter_ent.length; i++) {
     return  w.ent==enti})
          
      console.log('yo'+ i+ JSON.stringify(metadata))
-    
+     console.log(metadata[1].search)
     //now searching for duckling results
     //srchare the duckling results
  
-        if( JSON.parse(metadata).search=="entities") {
+        if( metadata.search=="entities") {
             console.log('hmm')
             
     var filter_srch = _.filter(srch, function(x){
