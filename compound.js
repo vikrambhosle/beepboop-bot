@@ -1,8 +1,6 @@
 var _ = require('underscore');
 
-var meta= '[{ent:"amount", search:"entities", type: "amount-of-money"},
-{ent:"headcount", search:"entities", type: "number"},
-{ent:"strtdate", search:"additional_info.grain", type: "day"}]'
+var meta= '[{ent:"amount", search:"entities", type: "amount-of-money"},{ent:"headcount", search:"entities", type: "number"},{ent:"strtdate", search:"additional_info.grain", type: "day"}]'
     
     
 
