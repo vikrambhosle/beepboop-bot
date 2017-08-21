@@ -7,6 +7,8 @@ var str = '{"model": "default", "time": "2017-08-19T13:09:40.445117", "user_inpu
 var obj = JSON.parse(str).user_input.entities;
 var srch =JSON.parse(str).user_input.entities.additional_info;
     
+console.log(srch)
+
 /*var filtered = _.filter(obju, function(a){
 return _.some(a.tax,function(b){
     return b.id==15})})*/
@@ -23,11 +25,11 @@ for(var i = 0; i < filter_ent.length; i++) {
     var end = filter_ent[i].end
 
     var filter_srch = _.filter(srch, function(x){
-    return  x.start.toInt >=start && x.end.toInt <=end})
+    return  x.start.toInt >=start && x.end.toInt <=end })
     
     
     console.log(filter_ent);
-    console.log(filter_srch);
+    console.log('yo'+filter_srch);
 }
 
 
