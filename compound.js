@@ -11,11 +11,11 @@ return _.some(a.tax,function(b){
 
 var filter_ent = _.filter(obj, function(n){
     return  n.extractor=="ner_crf"})
-
+/*
 console.log(JSON.stringify(filtered))
 console.log(JSON.stringify(filtereda))
 console.log(JSON.stringify(filtereda[1]))
-
+*/
 for(var i = 0; i < filter_ent.length; i++) {
     var start = filter_ent[i].start;
     var end = filter_ent[i].e;nd
