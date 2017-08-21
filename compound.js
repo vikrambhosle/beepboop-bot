@@ -29,14 +29,14 @@ for(var i = 0; i < filter_ent.length; i++) {
     var end = filter_ent[i].end
     var enti = filter_ent[i].entity
         //// got start , end and entity ( headcoount) from ner_crf ( core entities
-    
+     // find search metadata to search in duckling results
     var metadata = _.filter(JSON.parse(meta), function(w){
     return  w.ent==enti})
-          // find search metadata to search in duckling results
-    
-    console.log(metadata)
+         
+     console.log(metadata)
     
     //now searching for duckling results
+    //srchare the duckling results
     
         if( metadata.search=="entities") {
     var filter_srch = _.filter(srch, function(x){
