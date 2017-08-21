@@ -23,19 +23,28 @@ console.log(JSON.stringify(filtered))
 console.log(JSON.stringify(filtereda))
 console.log(JSON.stringify(filtereda[1]))
 */
+
 for(var i = 0; i < filter_ent.length; i++) {
     var start = filter_ent[i].start;
     var end = filter_ent[i].end
     var enti = filter_ent[i].entity
-    
+        //// got start , end and entity ( headcoount) from ner_crf ( core entities
     
     var metadata = _.filter(JSON.parse(meta), function(w){
     return  w.ent==enti})
+          // find search metadata to search in duckling results
     
+    console.log(metadata)
+    
+    //now searching for duckling results
+    
+        if( metadata.search=="entities") {
     var filter_srch = _.filter(srch, function(x){
-    return  x.start.toInt >=start.toInt && x.end.toInt <=end.toInt })
+    return  x.start.toInt >=start.toInt && x.end.toInt <=end.toInt && x.type == })
+     }
     
     
+    ////
     console.log(filter_ent);
     console.log('yo'+filter_srch);
 }
