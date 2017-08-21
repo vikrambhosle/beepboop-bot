@@ -5,7 +5,6 @@ var str = '{"model": "default", "time": "2017-08-19T13:09:40.445117", "user_inpu
 var obj = JSON.parse(str).user_input.entities;
 
 
-
 /*var filtered = _.filter(obju, function(a){
 return _.some(a.tax,function(b){
     return b.id==15})})*/
@@ -15,7 +14,7 @@ var filter_ent = _.filter(obj, function(n){
 
 var srch = _.filter(obj, function(n){
     return  n.extractor=="ner_duckling"})
-console.log(srch)
+//console.log(srch)
 
 
 var test = _.filter(meta, function(n){
