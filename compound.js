@@ -9,16 +9,21 @@ var filtered = _.filter(obju, function(a){
 return _.some(a.tax,function(b){
     return b.id==15})})
 
-var filtereda = _.filter(obj, function(n){
+var filter_ent = _.filter(obj, function(n){
     return  n.extractor=="ner_crf"})
 
 console.log(JSON.stringify(filtered))
 console.log(JSON.stringify(filtereda))
 console.log(JSON.stringify(filtereda[1]))
 
-var even = _.find([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+for(var i = 0; i < filter_ent.length; i++) {
+    var start = filter_ent[i].start;
+    var end = filter_ent[i].e;nd
 
-console.log(even)
+    console.log(start);
+    console.log(end);
+}
+
 
 /*_.filter(data.grouplist, function(n){ 
     return _.some(n.optionlist, function(option){ 
