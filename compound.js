@@ -21,17 +21,17 @@ console.log(JSON.stringify(filtered))
 console.log(JSON.stringify(filtereda))
 console.log(JSON.stringify(filtereda[1]))
 */
-
+ //// get start , end and entity ( headcount) from ner_crf ( core entities
 for(var i = 0; i < filter_ent.length; i++) {
     var start = filter_ent[i].start;
     var end = filter_ent[i].end
     var enti = filter_ent[i].entity
-        //// got start , end and entity ( headcount) from ner_crf ( core entities
-     // find search metadata to search in duckling results
+       
+     // find core entity metadata to search in duckling results
     var metadata = _.filter(JSON.parse(meta), function(w){
     return  w.ent==enti})
          
-     console.log('yo'+metadata)
+     console.log('yo'+ i+ JSON.stringify(metadata))
     
     //now searching for duckling results
     //srchare the duckling results
