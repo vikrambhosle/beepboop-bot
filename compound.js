@@ -18,7 +18,7 @@ console.log(JSON.stringify(filtereda[1]))
 */
 for(var i = 0; i < filter_ent.length; i++) {
     var start = filter_ent[i].start;
-    var end = filter_ent[i].e;nd
+    var end = filter_ent[i].end
 
     console.log(start);
     console.log(end);
