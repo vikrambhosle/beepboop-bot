@@ -35,8 +35,12 @@ for(var i = 0; i < filter_ent.length; i++) {
     //now searching for duckling results
     //srchare the duckling results
  
-        if( metadata[0].search=="entities") {
-                    
+        if( metadata[0].search=="entities") { 
+    var filter_srch = _.filter(srch, function(x){
+    return  parseInt(x.start) >=parseInt(start) && parseInt(x.end) <=parseInt(end) && x.entity == metadata[0].type})
+     }
+    
+         if( metadata[0].search=="entities") { 
     var filter_srch = _.filter(srch, function(x){
     return  parseInt(x.start) >=parseInt(start) && parseInt(x.end) <=parseInt(end) && x.entity == metadata[0].type})
      }
