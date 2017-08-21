@@ -31,8 +31,7 @@ for(var i = 0; i < filter_ent.length; i++) {
     var metadata = _.filter(JSON.parse(meta), function(w){
     return  w.ent==enti})
          
-     console.log('yo'+ i+ JSON.stringify(metadata))
-     console.log(metadata[0].search)
+
     //now searching for duckling results
     //srchare the duckling results
  
@@ -45,7 +44,8 @@ for(var i = 0; i < filter_ent.length; i++) {
     
     ////
    // console.log(filter_ent);
-   console.log('yo'+JSON.stringify(filter_srch));
+   console.log('yo'+JSON.stringify(filter_ent));
+    console.log('yo'+JSON.stringify(filter_srch));
 }
 
 
