@@ -19,7 +19,7 @@ var srch = _.filter(obj, function(n){
 
 var test = _.filter(JSON.parse(meta), function(w){
     return  w.ent=="amount"})
-console.log('fg' + test)
+console.log(test)
 
 /*
 console.log(JSON.stringify(filtered))
