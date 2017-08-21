@@ -23,7 +23,7 @@ for(var i = 0; i < filter_ent.length; i++) {
     var end = filter_ent[i].end
 
     var filter_srch = _.filter(srch, function(x){
-    return  x.start.toInt >=start && x.end.toInt >=end})
+    return  x.start.toInt >=start && x.end.toInt <=end})
     
     
     console.log(filter_ent);
