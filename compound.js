@@ -51,9 +51,9 @@ for(var i = 0; i < filter_ent.length; i++) {
     
     ////
    // console.log(filter_ent);
-    filter_ent[i]["ducklingvalue"]=4
+   
    console.log('yo'+JSON.stringify(filter_ent[i]));
-    console.log('yo'+JSON.stringify(filter_srch));
+   // console.log('yo'+JSON.stringify(filter_srch));
 }
 
 
