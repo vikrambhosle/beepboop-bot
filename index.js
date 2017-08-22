@@ -1,5 +1,6 @@
 var Botkit = require('botkit')
 var pg =require('pg')
+var tools = require('./compound.js')
 var rasa = require('./middleware-rasa.js')({rasa_uri: 'http://localhost:5000'});
 const connectionString = 'postgres://postgres:postgres@localhost:5432/postgres';
 const client = new pg.Client(connectionString);
@@ -43,6 +44,9 @@ controller.hears(['hi'], ['ambient', 'direct_message','direct_mention','mention'
 /*controller.on('bot_channel_join', function (bot, message) {
   bot.reply(message, "Hey , how can I help you today ?")
 })*/
+
+tools.composite();
+
 controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hears, function(bot, message) {
       var user = message.user;
     var today = new Date();
