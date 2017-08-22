@@ -1,3 +1,7 @@
+
+module.exports = {
+composite: function () {
+
 var _ = require('underscore');
 
 var meta= '[{"ent":"amount", "search":"entities", "type": "amount-of-money"},{"ent":"headcount", "search":"entities", "type": "number"},{"ent":"startdate", "search":"additional_info.grain", "type": "day"},{"ent":"enddate", "search":"additional_info.grain", "type": "day"},{"ent":"jira", "search":"entities", "type": "number"}]'
@@ -54,7 +58,7 @@ for(var i = 0; i < filter_ent.length; i++) {
    
    console.log('yo'+JSON.stringify(filter_ent[i]));
    // console.log('yo'+JSON.stringify(filter_srch));
-}
+} }}
 
 
 /*_.filter(data.grouplist, function(n){ 
