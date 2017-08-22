@@ -61,7 +61,10 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
     var bcontact =" "
     var ibmcontact=" "
     var wpc =" "
-  bot.createConversation(message,function(err,onvo) {
+  console.log(response)
+    
+    
+    bot.createConversation(message,function(err,onvo) {
 
         
     onvo.addQuestion('Give me a short description of the Work Package scope',[
