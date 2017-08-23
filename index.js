@@ -71,6 +71,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
       {
         pattern: ['.'],
         callback: function(response,onvo) {
+           console.log('dekho'+tools.composite(response.entities))
           console.log('PIntent:', response.intent, response.intent.name);
           if(response.intent.name=='dont_know' && parseFloat(response.intent.confidence)>0.40) {
           onvo.say('I need a description to proceed');
@@ -90,7 +91,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         pattern: ['.'],
         callback: function(response,onvo) {
           
-          console.log('dekho'+tools.composite(response.entities))
+         
           console.log('Intent:', response.intent, response.intent.name);
           if(response.intent.name=='dont_know'&& parseFloat(response.intent.confidence)>0.40) {
           onvo.transitionTo('wpheadcount','No problem.Ill ask you later');
