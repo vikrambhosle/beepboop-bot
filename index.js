@@ -71,8 +71,8 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
       {
         pattern: ['.'],
         callback: function(response,onvo) {
-           console.log('check1'+JSON.stringify((response.entities[0]))
-           console.log('check2'+JSON.stringify((response.entities[0]))
+           console.log('check1'+JSON.stringify(response.entities[0]))
+           console.log('check2'+JSON.stringify(response.entities[0]))
            console.log('dekho'+tools.composite(response.entities[0]))
           console.log('PIntent:', response.intent, response.intent.name);
           if(response.intent.name=='dont_know' && parseFloat(response.intent.confidence)>0.40) {
