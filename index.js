@@ -45,7 +45,7 @@ controller.hears(['hi'], ['ambient', 'direct_message','direct_mention','mention'
   bot.reply(message, "Hey , how can I help you today ?")
 })*/
 
-tools.composite();
+
 
 controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hears, function(bot, message) {
       var user = message.user;
