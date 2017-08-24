@@ -42,10 +42,10 @@ for(var i = 0; i < filter_ent.length; i++) {
     if( metadata[0]==undefined) 
     { 
         filter_ent[i]["duckling_value"]=""
-        return 
+        
     }
         
-        
+        else {
     //now searching for duckling results
     //srchare the duckling results
  
@@ -60,7 +60,7 @@ for(var i = 0; i < filter_ent.length; i++) {
     return  parseInt(x.start) >=parseInt(start) && parseInt(x.end) <=parseInt(end) && x.additional_info.grain == metadata[0].type})
      filter_ent[i]["duckling_value"]=filter_srch[0].value
     }
-    
+        }
     
     ////
    // console.log(filter_ent);
@@ -70,7 +70,7 @@ for(var i = 0; i < filter_ent.length; i++) {
    // console.log('yo'+JSON.stringify(filter_srch));
 }
 
-  return  filter_ent[i]
+  return  filter_ent
 
 }}
 
