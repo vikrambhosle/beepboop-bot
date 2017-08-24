@@ -42,7 +42,7 @@ for(var i = 0; i < filter_ent.length; i++) {
     if( metadata[0]==undefined) 
     { 
         filter_ent[i]["duckling_value"]=""
-        return filter_ent[i]
+        return 
     }
         
         
@@ -66,9 +66,13 @@ for(var i = 0; i < filter_ent.length; i++) {
    // console.log(filter_ent);
    
    console.log('yoi'+JSON.stringify(filter_ent[i]));
-    return filter_ent[i]
+    
    // console.log('yo'+JSON.stringify(filter_srch));
-} }}
+}
+
+  return  filter_ent[i]
+
+}}
 
 
 /*_.filter(data.grouplist, function(n){ 
