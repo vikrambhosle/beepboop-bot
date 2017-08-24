@@ -39,6 +39,13 @@ for(var i = 0; i < filter_ent.length; i++) {
     return  w.ent==enti})
          
 
+    if( metadata[0]==undefined) 
+    { 
+        filter_ent[i]["duckling_value"]=""
+        return filter_ent[i]
+    }
+        
+        
     //now searching for duckling results
     //srchare the duckling results
  
@@ -59,6 +66,7 @@ for(var i = 0; i < filter_ent.length; i++) {
    // console.log(filter_ent);
    
    console.log('yoi'+JSON.stringify(filter_ent[i]));
+    return filter_ent[i]
    // console.log('yo'+JSON.stringify(filter_srch));
 } }}
 
