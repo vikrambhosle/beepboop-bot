@@ -73,7 +73,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
         callback: function(response,onvo) {
            console.log('check1'+JSON.stringify(response.entities))
            console.log('check2'+JSON.stringify(response.entities))
-           console.log('dekho'+tools.composite(response.entities))
+           console.log('dekho'+JSON.stringify(tools.composite(response.entities)))
           console.log('PIntent:', response.intent, response.intent.name);
           if(response.intent.name=='dont_know' && parseFloat(response.intent.confidence)>0.40) {
           onvo.say('I need a description to proceed');
