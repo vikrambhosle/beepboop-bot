@@ -7,6 +7,7 @@ const connectionString = 'postgres://postgres:postgres@localhost:5432/postgres';
 const client = new pg.Client(connectionString);
 client.connect();
 
+console.log(config.token)
 process.env.token = config.token;
 process.env.clientId = config.clientId;
 var clientsecret = process.env.CLIENT_SECRET;
