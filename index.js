@@ -14,7 +14,7 @@ var clientsecret = process.env.CLIENT_SECRET;
 console.log('lk'+clientsecret)
 process.env.port = config.port;
 
-if (!process.env.clientId || clientsecret || !process.env.port) {
+if (!process.env.clientId || !clientsecret || !process.env.port) {
   console.log('Error: Specify clientId clientSecret and port in environment');
   process.exit(1);
 }
