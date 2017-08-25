@@ -9,7 +9,7 @@ client.connect();
 
 process.env.token = config.token;
 process.env.clientId = config.clientId;
-process.env.clientSecret = config.clientSecret;
+var clientSecret = process.env.CLIENT_SECRET;
 process.env.port = config.port;
 
 var token = process.env.SLACK_TOKEN
