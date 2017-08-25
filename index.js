@@ -11,6 +11,7 @@ console.log(config.token)
 process.env.token = config.token;
 process.env.clientId = config.clientId;
 var clientsecret = process.env.CLIENT_SECRET;
+console.log('lk'+clientsecret)
 process.env.port = config.port;
 
 if (!process.env.clientId || clientsecret || !process.env.port) {
