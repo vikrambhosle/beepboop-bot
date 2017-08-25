@@ -9,16 +9,42 @@ client.connect();
 
 process.env.token = config.token;
 process.env.clientId = config.clientId;
-var clientSecret = process.env.CLIENT_SECRET;
+var clientsecret = process.env.CLIENT_SECRET;
 process.env.port = config.port;
+
+if (!process.env.clientId || clientsecret || !process.env.port) {
+  console.log('Error: Specify clientId clientSecret and port in environment');
+  process.exit(1);
+}
+
 
 var token = process.env.SLACK_TOKEN
 
 var controller = Botkit.slackbot({
   // reconnect to Slack RTM when connection goes bad
   retry: Infinity,
+  interactive_replies: true,
   debug: false
-})
+}).configureSlackApp(
+  {
+    clientId: process.env.clientId,
+    clientSecret:clientsecret,
+    // Set scopes as needed. https://api.slack.com/docs/oauth-scopes
+    scopes: ['bot','incoming-webhook','team:read','users:read','users.profile:read','channels:read','im:read','im:write','groups:read','emoji:read','chat:write:bot'],
+  }
+);
+
+controller.setupWebserver(process.env.port,function(err,webserver) {
+  controller.createWebhookEndpoints(controller.webserver);
+
+  controller.createOauthEndpoints(controller.webserver,function(err,req,res) {
+    if (err) {
+      res.status(500).send('ERROR: ' + err);
+    } else {
+      res.send('Success!');
+    }
+  });
+});
 
 controller.middleware.receive.use(rasa.receive);
 // Assume single team mode if we have a SLACK_TOKEN
