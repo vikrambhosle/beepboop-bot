@@ -20,7 +20,7 @@ if (!process.env.clientId || !clientsecret || !process.env.port) {
 }
 
 
-var token = process.env.token
+//var token = process.env.token
 
 var controller = Botkit.slackbot({
   // reconnect to Slack RTM when connection goes bad
@@ -50,7 +50,7 @@ controller.setupWebserver(process.env.port,function(err,webserver) {
 
 controller.middleware.receive.use(rasa.receive);
 // Assume single team mode if we have a SLACK_TOKEN
-if (token) {
+/*if (token) {
   console.log('Starting in single-team mode')
   controller.spawn({
     token: token
@@ -60,12 +60,12 @@ if (token) {
     }
 
     console.log('Connected to Slack RTM')
-  })
+  })*/
 // Otherwise assume multi-team mode - setup beep boop resourcer connection
-} else {
+/*} else {
   console.log('Starting in Beep Boop multi-team mode')
   require('beepboop-botkit').start(controller, { debug: true })
-}
+} */
 
 /*controller.on('bot_channel_join', function (bot, message) {
   bot.reply(message, "I'm here!")
@@ -78,6 +78,32 @@ controller.hears(['hi'], ['ambient', 'direct_message','direct_mention','mention'
 /*controller.on('bot_channel_join', function (bot, message) {
   bot.reply(message, "Hey , how can I help you today ?")
 })*/
+
+controller.on('create_bot',function(bot,config) {
+  if (_bots[bot.config.token]) {
+    // already online! do nothing.
+  } else {
+    bot.startRTM(function(err) {
+      if (!err) {
+        trackBot(bot);
+      }
+      bot.startPrivateConversation({user: config.createdBy},function(err,convo) {
+        if (err) {
+          console.log(err);
+        } else {
+          convo.say('I am a bot that has just joined your team');
+          convo.say('You must now /invite me to a channel so that I can be of use!');
+        }
+      });
+    });
+  }
+});
+
+var _bots = {};
+function trackBot(bot) {
+  _bots[bot.config.token] = bot;
+}
+
 
 controller.hears(['device_failure'], 'direct_message,direct_mention,mention',rasa.hears,  function (bot, message) {
     var testButtonReply = {
