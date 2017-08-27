@@ -32,7 +32,7 @@ var controller = Botkit.slackbot({
     clientId: process.env.clientId,
     clientSecret:clientsecret,
     // Set scopes as needed. https://api.slack.com/docs/oauth-scopes
-    scopes: ['bot'],
+    scopes: ['bot','incoming-webhook','team:read','users:read','users.profile:read','channels:read','im:read','im:write','groups:read','emoji:read','chat:write:bot'],
   }
 );
 
