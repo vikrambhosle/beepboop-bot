@@ -20,7 +20,7 @@ if (!process.env.clientId || !clientsecret || !process.env.port) {
 }
 
 
-var token = process.env.SLACK_TOKEN
+var token = process.env.token
 
 var controller = Botkit.slackbot({
   // reconnect to Slack RTM when connection goes bad
