@@ -73,7 +73,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
                         callback_id: '123',
                         attachment_type: 'default',
                         title: obj[i].entity,
-                        text: obj[i].value,
+                        text: if (obj[i].duckling_value==""){ return obj[i].value } else {return obj[i].duckling_value },
                         color: '#0075C7',
                         actions: [
                             {
