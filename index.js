@@ -65,25 +65,31 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
     var obj=tools.composite(message.entities)
     if (_.size(obj)>1)
     {
-      var testButtonReply = {
-                username: 'Button Bot' ,
-                text: 'This is a test message with a button',
-                replace_original: 'true',
-                attachments: [
-                    {
+   var jsonArr = [];   
+   for (var i = 0; i < obj.length; i++) {
+    jsonArr.push({
+        
                         fallback: "fallback text",
                         callback_id: '123',
                         attachment_type: 'default',
-                        title: 'message title',
-                        text: 'message content',
+                        title: obj.entity,
+                        text: obj.value,
                         color: '#0075C7',
                         actions: [
                             {
                               "name": "button name",
-                              "text": "button text",
+                              "text": "Delete",
                               "type": "button",
                               "value": "whatever you want to pass into the interactive_message_callback"}
                         ]
+    });
+}
+      
+      var testButtonReply = {
+                username: 'Button Bot' ,
+                text: 'This is a test message with a button',
+                replace_original: 'true',
+                attachments: jsonArr
                     }
                 ],
                 icon_url: 'http://14379-presscdn-0-86.pagely.netdna-cdn.com/wp-content/uploads/2014/05/ButtonButton.jpg'
