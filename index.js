@@ -86,8 +86,8 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
 }
       
       var testButtonReply = {
-                username: 'Button Bot' ,
-                text: 'This is a test message with a button',
+                username: 'resourceguru' ,
+                text: ' I  understoood the following . If i got something worng , you can delete it !',
                 replace_original: 'true',
                 attachments: jsonArr ,
                 icon_url: 'http://14379-presscdn-0-86.pagely.netdna-cdn.com/wp-content/uploads/2014/05/ButtonButton.jpg'
