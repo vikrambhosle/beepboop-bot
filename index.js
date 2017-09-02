@@ -91,7 +91,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
                 replace_original: 'true',
                 attachments: jsonArr
                     }
-                ],
+                ,
                 icon_url: 'http://14379-presscdn-0-86.pagely.netdna-cdn.com/wp-content/uploads/2014/05/ButtonButton.jpg'
                 
             }
