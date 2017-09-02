@@ -252,6 +252,6 @@ controller.hears(['greet'],'direct_message,direct_mention,mention', rasa.hears, 
     bot.reply(message, 'Hello. How can I help you ?')
    console.log('Intent:', message.intent);
     console.log('Entities:', message.entities);  
-    client.query('INSERT INTO items(text) values($1)',[message.intent.name]);
+    //client.query('INSERT INTO items(text) values($1)',[message.intent.name]);
  
 });
