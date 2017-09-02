@@ -61,8 +61,13 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
     var ibmcontact=" "
     var wpc =" "
 
+    console.log('mess1'+JSON.stringify(message.entities))
+    console.log('mess2'+JSON.stringify(message.entities))
+    console.log('mess3'+JSON.stringify(tools.composite(message.entities)))
+    console.log('mess4', message.intent, message.intent.name);
     
-    
+  
+  
     bot.createConversation(message,function(err,onvo) {
 
         
