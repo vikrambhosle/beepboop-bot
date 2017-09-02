@@ -1,4 +1,5 @@
 var Botkit = require('botkit')
+var _ = require('underscore');
 var pg =require('pg')
 var tools = require('./compound.js')
 var rasa = require('./middleware-rasa.js')({rasa_uri: 'http://localhost:5000'});
