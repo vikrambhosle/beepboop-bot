@@ -72,8 +72,8 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
                         fallback: "fallback text",
                         callback_id: '123',
                         attachment_type: 'default',
-                        title: obj.entity,
-                        text: obj.value,
+                        title: obj[i].entity,
+                        text: obj[i].value,
                         color: '#0075C7',
                         actions: [
                             {
