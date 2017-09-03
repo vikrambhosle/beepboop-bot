@@ -326,7 +326,7 @@
           {
             "start": 71,
             "end": 92,
-            "value": " approx 12 resources",
+            "value": "approx 12 resources",
             "entity": "headcount"
           },
           {
@@ -368,7 +368,7 @@
           {
             "start": 90,
             "end": 116,
-            "value": " Jira reference is 1233454",
+            "value": "Jira reference is 1233454",
             "entity": "jira"
           }
         ]
