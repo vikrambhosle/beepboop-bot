@@ -67,7 +67,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
     {
    var jsonArr = [];   
    for (var i = 0; i < obj.length; i++) {
-    var vtex= if(obj[i].duckling_value==""){ return obj[i].value } else {return obj[i].duckling_value }
+     if(obj[i].duckling_value==""){ var vtex= obj[i].value } else {var vtex= obj[i].duckling_value }
      jsonArr.push({
         
                         fallback: "fallback text",
