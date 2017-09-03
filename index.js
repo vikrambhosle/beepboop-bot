@@ -81,7 +81,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
                               "name": "button name",
                               "text": "Delete",
                               "type": "button",
-                              "value": "whatever you want to pass into the interactive_message_callback"}
+                              "value": "delete"}
                         ]
     });
 }
