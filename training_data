@@ -314,7 +314,7 @@
           {
             "start": 39,
             "end": 57,
-            "value": "begins 1 jan 2018 ",
+            "value": "begins 1 jan 2018",
             "entity": "startdate"
           },
           {
@@ -326,7 +326,7 @@
           {
             "start": 71,
             "end": 92,
-            "value": " approx 12 resources ",
+            "value": " approx 12 resources",
             "entity": "headcount"
           },
           {
@@ -356,7 +356,7 @@
           {
             "start": 41,
             "end": 67,
-            "value": " Start date is 12-12-2017 ",
+            "value": "Start date is 12-12-2017",
             "entity": "startdate"
           },
           {
@@ -380,7 +380,7 @@
           {
             "start": 0,
             "end": 7,
-            "value": "10 ppl ",
+            "value": "10 ppl",
             "entity": "headcount"
           },
           {
@@ -398,13 +398,13 @@
           {
             "start": 37,
             "end": 52,
-            "value": " end  12/5/2018",
+            "value": "end  12/5/2018",
             "entity": "enddate"
           },
           {
             "start": 52,
             "end": 65,
-            "value": " amount 50000",
+            "value": "amount 50000",
             "entity": "amount"
           }
         ]
@@ -422,19 +422,19 @@
           {
             "start": 12,
             "end": 26,
-            "value": " jira ref 899 ",
+            "value": "jira ref 899",
             "entity": "jira"
           },
           {
             "start": 25,
             "end": 42,
-            "value": " start 12/12/2017",
+            "value": "start 12/12/2017",
             "entity": "startdate"
           },
           {
             "start": 43,
             "end": 58,
-            "value": "end  12/5/2018 ",
+            "value": "end  12/5/2018",
             "entity": "enddate"
           },
           {
