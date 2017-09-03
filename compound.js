@@ -53,7 +53,7 @@ for(var i = 0; i < filter_ent.length; i++) {
     var filter_srch = _.filter(srch, function(x){
     return  parseInt(x.start) >=parseInt(start) && parseInt(x.end) <=parseInt(end) && x.entity == metadata[0].type})  
     console.log('rfx'+filter_srch)
-    if (filter_srch =="") { filter_ent[i]["duckling_value"] = "null"}
+    if (filter_srch =="") { filter_ent[i]["duckling_value"] = "na"}
     else{filter_ent[i]["duckling_value"]=filter_srch[0].value}
         }
       
@@ -62,7 +62,7 @@ for(var i = 0; i < filter_ent.length; i++) {
     var filter_srch = _.filter(srch, function(x){
     return  parseInt(x.start) >=parseInt(start) && parseInt(x.end) <=parseInt(end) && x.additional_info.grain == metadata[0].type}) 
     console.log('rfx'+filter_srch)
-    if (filter_srch =="") {filter_ent[i]["duckling_value"] = "null"} 
+    if (filter_srch =="") {filter_ent[i]["duckling_value"] = "na"} 
     else{filter_ent[i]["duckling_value"]=filter_srch[0].value}
 }   
         
@@ -75,8 +75,9 @@ for(var i = 0; i < filter_ent.length; i++) {
     
    // console.log('yo'+JSON.stringify(filter_srch));
 }
-  
-  return  filter_ent
+  var final_out = _.filter(filter_ent, function(n){
+   return  n.duckling_value !="na"})
+  return  final_out
 
 }}
 
