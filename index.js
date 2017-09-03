@@ -88,7 +88,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
       
       var testButtonReply = {
                 username: 'resourceguru' ,
-                text: ' I  understood the following . If i got something wrong , you can delete it !',
+                text: ' If i got something wrong , you can delete it !',
                 replace_original: 'true',
                 attachments: jsonArr ,
                 icon_url: 'http://14379-presscdn-0-86.pagely.netdna-cdn.com/wp-content/uploads/2014/05/ButtonButton.jpg'
@@ -100,7 +100,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
   
   
   
-    bot.createConversation(message,function(err,onvo) {
+  /*  bot.createConversation(message,function(err,onvo) {
 
         
     onvo.addQuestion('Give me a short description of the Work Package scope',[
@@ -271,8 +271,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
     convo.setVar('error', err);
     convo.gotoThread('error');
     next(err); // pass an error because we changed threads again during this transition
-  });*/
-
+  });
 });
     
     console.log("wpc==",wpc);
@@ -281,7 +280,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
       onvo.next()
     
       onvo.activate()
-         })
+         }) */
 
 });
 
