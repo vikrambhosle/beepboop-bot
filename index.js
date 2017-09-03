@@ -67,13 +67,14 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
     {
    var jsonArr = [];   
    for (var i = 0; i < obj.length; i++) {
-    jsonArr.push({
+    var vtex= if(obj[i].duckling_value==""){ return obj[i].value } else {return obj[i].duckling_value }
+     jsonArr.push({
         
                         fallback: "fallback text",
                         callback_id: '123',
                         attachment_type: 'default',
                         title: obj[i].entity,
-                        text: if(obj[i].duckling_value==""){ return obj[i].value } else {return obj[i].duckling_value },
+                        text: vtex ,
                         color: '#0075C7',
                         actions: [
                             {
@@ -87,7 +88,7 @@ controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hea
       
       var testButtonReply = {
                 username: 'resourceguru' ,
-                text: ' I  understoood the following . If i got something worng , you can delete it !',
+                text: ' I  understood the following . If i got something wrong , you can delete it !',
                 replace_original: 'true',
                 attachments: jsonArr ,
                 icon_url: 'http://14379-presscdn-0-86.pagely.netdna-cdn.com/wp-content/uploads/2014/05/ButtonButton.jpg'
