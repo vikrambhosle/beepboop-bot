@@ -52,14 +52,17 @@ for(var i = 0; i < filter_ent.length; i++) {
         if( metadata[0].search=="entities") { 
     var filter_srch = _.filter(srch, function(x){
     return  parseInt(x.start) >=parseInt(start) && parseInt(x.end) <=parseInt(end) && x.entity == metadata[0].type})
-    filter_ent[i]["duckling_value"]=filter_srch[0].value
+    if (filter_srch[0].value ==undefined) { filter_srch[0].value = "null"}
+    else{filter_ent[i]["duckling_value"]=filter_srch[0].value}
         }
     
          if( metadata[0].search=="additional_info.grain") { 
     var filter_srch = _.filter(srch, function(x){
     return  parseInt(x.start) >=parseInt(start) && parseInt(x.end) <=parseInt(end) && x.additional_info.grain == metadata[0].type})
-     filter_ent[i]["duckling_value"]=filter_srch[0].value
-    }
+    if (filter_srch[0].value ==undefined) { filter_srch[0].value = "null"} 
+    else{filter_ent[i]["duckling_value"]=filter_srch[0].value}
+            
+         }
         }
     
     ////
@@ -69,7 +72,7 @@ for(var i = 0; i < filter_ent.length; i++) {
     
    // console.log('yo'+JSON.stringify(filter_srch));
 }
-
+  
   return  filter_ent
 
 }}
