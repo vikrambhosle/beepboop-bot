@@ -409,6 +409,330 @@
           }
         ]
       },
+            {
+        "text": "Received a request from Pavan for a work package for 20 resources and 5000 pounds starting 12 Sep  2017",
+        "intent": "create_wp",
+        "entities": [
+          {
+            "start": 53,
+            "end": 65,
+            "value": "20 resources",
+            "entity": "headcount"
+          },
+          {
+            "start": 70,
+            "end": 81,
+            "value": "5000 pounds",
+            "entity": "amount"
+          },
+          {
+            "start": 82,
+            "end": 103,
+            "value": "starting 12 Sep  2017",
+            "entity": "startdate"
+          },
+          {
+            "start": 36,
+            "end": 48,
+            "value": "work package",
+            "entity": "workpackage"
+          }
+        ]
+      },
+      {
+        "text": "Relationship Insights work package for same resource level extended to year end",
+        "intent": "create_wp",
+        "entities": []
+      },
+      {
+        "text": "Work package  for relationship Insights fro 10 folks for 450K",
+        "intent": "create_wp",
+        "entities": [
+          {
+            "start": 44,
+            "end": 52,
+            "value": "10 folks",
+            "entity": "headcount"
+          },
+          {
+            "start": 18,
+            "end": 39,
+            "value": "relationship Insights",
+            "entity": "project"
+          },
+          {
+            "start": 57,
+            "end": 61,
+            "value": "450K",
+            "entity": "amount"
+          }
+        ]
+      },
+      {
+        "text": "Please record a work package for Pavan. Jira is 1200 and amount 40000 pounds and 20  headcount",
+        "intent": "create_wp",
+        "entities": [
+          {
+            "start": 81,
+            "end": 94,
+            "value": "20  headcount",
+            "entity": "headcount"
+          },
+          {
+            "start": 40,
+            "end": 52,
+            "value": "Jira is 1200",
+            "entity": "jira"
+          },
+          {
+            "start": 16,
+            "end": 28,
+            "value": "work package",
+            "entity": "workpackage"
+          },
+          {
+            "start": 57,
+            "end": 76,
+            "value": "amount 40000 pounds",
+            "entity": "amount"
+          }
+        ]
+      },
+      {
+        "text": "Add work package for Data lineage, 12 ppl , start date 12 sep 2017 end date 12 dec 2017 JIRA ref 1234 headcount : 12 amount 20000",
+        "intent": "create_wp",
+        "entities": [
+          {
+            "start": 4,
+            "end": 16,
+            "value": "work package",
+            "entity": "workpackage"
+          },
+          {
+            "start": 44,
+            "end": 66,
+            "value": "start date 12 sep 2017",
+            "entity": "startdate"
+          },
+          {
+            "start": 67,
+            "end": 87,
+            "value": "end date 12 dec 2017",
+            "entity": "enddate"
+          },
+          {
+            "start": 117,
+            "end": 129,
+            "value": "amount 20000",
+            "entity": "amount"
+          },
+          {
+            "start": 88,
+            "end": 101,
+            "value": "JIRA ref 1234",
+            "entity": "jira"
+          },
+          {
+            "start": 35,
+            "end": 41,
+            "value": "12 ppl",
+            "entity": "headcount"
+          },
+          {
+            "start": 21,
+            "end": 33,
+            "value": "Data lineage",
+            "entity": "project"
+          }
+        ]
+      },
+      {
+        "text": "Work package for data simplification , begins 1 jan 2018 till feb 2018, approx 12 resources , price 172 k",
+        "intent": "create_wp",
+        "entities": [
+          {
+            "start": 0,
+            "end": 12,
+            "value": "Work package",
+            "entity": "workpackage"
+          },
+          {
+            "start": 17,
+            "end": 36,
+            "value": "data simplification",
+            "entity": "project"
+          },
+          {
+            "start": 39,
+            "end": 56,
+            "value": "begins 1 jan 2018",
+            "entity": "startdate"
+          },
+          {
+            "start": 57,
+            "end": 71,
+            "value": "till feb 2018",
+            "entity": "enddate"
+          },
+          {
+            "start": 79,
+            "end": 91,
+            "value": "12 resources",
+            "entity": "headcount"
+          },
+          {
+            "start": 94,
+            "end": 105,
+            "value": "price 172 k",
+            "entity": "amount"
+          }
+        ]
+      },
+      {
+        "text": "work package starting on 13 sep 2017 ending on 12  dec 2017 , jira is 3456",
+        "intent": "create_wp",
+        "entities": [
+          {
+            "start": 0,
+            "end": 12,
+            "value": "work package",
+            "entity": "workpackage"
+          },
+          {
+            "start": 13,
+            "end": 36,
+            "value": "starting on 13 sep 2017",
+            "entity": "startdate"
+          },
+          {
+            "start": 37,
+            "end": 59,
+            "value": "ending on 12  dec 2017",
+            "entity": "enddate"
+          },
+          {
+            "start": 62,
+            "end": 74,
+            "value": "jira is 3456",
+            "entity": "jira"
+          }
+        ]
+      },
+      {
+        "text": "Work package for data simplification , begins 1 feb 2018 till march 2018, approx 12 resources  for amount 72000 pounds",
+        "intent": "create_wp",
+        "entities": [
+          {
+            "start": 0,
+            "end": 12,
+            "value": "Work package",
+            "entity": "workpackage"
+          },
+          {
+            "start": 13,
+            "end": 36,
+            "value": "for data simplification",
+            "entity": "project"
+          },
+          {
+            "start": 39,
+            "end": 57,
+            "value": "begins 1 feb 2018",
+            "entity": "startdate"
+          },
+          {
+            "start": 57,
+            "end": 70,
+            "value": "till march 2018",
+            "entity": "enddate"
+          },
+          {
+            "start": 71,
+            "end": 92,
+            "value": "approx 12 resources",
+            "entity": "headcount"
+          },
+          {
+            "start": 93,
+            "end": 117,
+            "value": "for amount 72000 pounds",
+            "entity": "amount"
+          }
+        ]
+      },
+      {
+        "text": "work package for 11  abinitio resources. Start date is 12-12-2017 end date is 12-12-2018. Jira reference is 3454",
+        "intent": "create_wp",
+        "entities": [
+          {
+            "start": 0,
+            "end": 12,
+            "value": "work package",
+            "entity": "workpackage"
+          },
+          {
+            "start": 13,
+            "end": 39,
+            "value": "for 11  abinitio resource",
+            "entity": "headcount"
+          },
+          {
+            "start": 41,
+            "end": 67,
+            "value": "Start date is 12-12-2017",
+            "entity": "startdate"
+          },
+          {
+            "start": 67,
+            "end": 89,
+            "value": "end date is 12-12-2018",
+            "entity": "enddate"
+          },
+          {
+            "start": 90,
+            "end": 116,
+            "value": "Jira reference is 3454",
+            "entity": "jira"
+          }
+        ]
+      },
+      {
+        "text": "8 ppl  jira ref 99 start 12/1/2017 end  12/5/2018 amount 60000",
+        "intent": "create_wp",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "8 ppl",
+            "entity": "headcount"
+          },
+          {
+            "start": 8,
+            "end": 20,
+            "value": "jira ref 99",
+            "entity": "jira"
+          },
+          {
+            "start": 21,
+            "end": 37,
+            "value": "start 12/1/2017",
+            "entity": "startdate"
+          },
+          {
+            "start": 37,
+            "end": 52,
+            "value": "end  12/5/2018",
+            "entity": "enddate"
+          },
+          {
+            "start": 52,
+            "end": 65,
+            "value": "amount 60000",
+            "entity": "amount"
+          }
+        ]
+      },
+         
       {
         "text": "headcount 10 jira ref 899 start 12/12/2017 end  12/5/2018 amount 50000",
         "intent": "create_wp",
