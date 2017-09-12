@@ -106,7 +106,7 @@ function trackBot(bot) {
 
 
 ========================
-
+var config = require('./config.json');
 var Botkit = require('botkit')
 var _ = require('underscore');
 var pg =require('pg')
@@ -115,17 +115,49 @@ var rasa = require('./middleware-rasa.js')({rasa_uri: 'http://localhost:5000'});
 const connectionString = 'postgres://postgres:postgres@localhost:5432/postgres';
 const client = new pg.Client(connectionString);
 client.connect();
+console.log(config.token)
+process.env.token = config.token;
+process.env.clientId = config.clientId;
+var clientsecret = process.env.CLIENT_SECRET;
+console.log('lk'+clientsecret)
+process.env.port = config.port;
 
-var token = process.env.SLACK_TOKEN
+if (!process.env.clientId || !clientsecret || !process.env.port) {
+  console.log('Error: Specify clientId clientSecret and port in environment');
+  process.exit(1);
+}
+
+//var token = process.env.SLACK_TOKEN
 
 var controller = Botkit.slackbot({
   // reconnect to Slack RTM when connection goes bad
   retry: Infinity,
+  interactive_replies: true,
   debug: false
-})
+}).configureSlackApp(
+  {
+    clientId: process.env.clientId,
+    clientSecret:clientsecret,
+    // Set scopes as needed. https://api.slack.com/docs/oauth-scopes
+    scopes: ['bot','incoming-webhook','team:read','users:read','users.profile:read','channels:read','im:read','im:write','groups:read','emoji:read','chat:write:bot'],
+  }
+);
+
+controller.setupWebserver(process.env.port,function(err,webserver) {
+  controller.createWebhookEndpoints(controller.webserver);
+
+  controller.createOauthEndpoints(controller.webserver,function(err,req,res) {
+    if (err) {
+      res.status(500).send('ERROR: ' + err);
+    } else {
+      res.send('Success!');
+    }
+  });
+});
+
 
 controller.middleware.receive.use(rasa.receive);
-// Assume single team mode if we have a SLACK_TOKEN
+/* Assume single team mode if we have a SLACK_TOKEN
 if (token) {
   console.log('Starting in single-team mode')
   controller.spawn({
@@ -136,12 +168,12 @@ if (token) {
     }
 
     console.log('Connected to Slack RTM')
-  })
+  })*/
 // Otherwise assume multi-team mode - setup beep boop resourcer connection
-} else {
+/*} else {
   console.log('Starting in Beep Boop multi-team mode')
   require('beepboop-botkit').start(controller, { debug: true })
-}
+}*/
 
 /*controller.on('bot_channel_join', function (bot, message) {
   bot.reply(message, "I'm here!")
@@ -154,7 +186,30 @@ controller.hears(['hi'], ['ambient', 'direct_message','direct_mention','mention'
   bot.reply(message, "Hey , how can I help you today ?")
 })*/
 
+controller.on('create_bot',function(bot,config) {
+  if (_bots[bot.config.token]) {
+    // already online! do nothing.
+  } else {
+    bot.startRTM(function(err) {
+      if (!err) {
+        trackBot(bot);
+      }
+      bot.startPrivateConversation({user: config.createdBy},function(err,convo) {
+        if (err) {
+          console.log(err);
+        } else {
+          convo.say('I am a bot that has just joined your team');
+          convo.say('You must now /invite me to a channel so that I can be of use!');
+        }
+      });
+    });
+  }
+});
 
+var _bots = {};
+function trackBot(bot) {
+  _bots[bot.config.token] = bot;
+}
 
 controller.hears(['create_wp'],'direct_message,direct_mention,mention', rasa.hears, function(bot, message) {
       var user = message.user;
