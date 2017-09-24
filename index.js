@@ -3,7 +3,7 @@ var Botkit = require('botkit')
 var _ = require('underscore');
 var pg =require('pg')
 var tools = require('./compound.js')
-var rasa = require('./middleware-rasa.js')({rasa_uri: 'http://localhost:5000'});
+var rasa = require('./middleware-rasa.js')({rasa_uri: 'http://107.178.215.132:5000'});
 const connectionString = 'postgres://postgres:postgres@localhost:5432/postgres';
 //const client = new pg.Client(connectionString);
 //client.connect();
