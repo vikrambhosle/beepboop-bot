@@ -7,9 +7,9 @@ var rasa = require('./middleware-rasa.js')({rasa_uri: 'http://localhost:5000'});
 const connectionString = 'postgres://postgres:postgres@localhost:5432/postgres';
 const client = new pg.Client(connectionString);
 client.connect();
-console.log(config.token)
-process.env.token = config.token;
-process.env.clientId = config.clientId;
+
+//process.env.token = config.token;
+//process.env.clientId = config.clientId;
 var clientsecret = process.env.CLIENT_SECRET;
 console.log('lk'+clientsecret)
 process.env.port = config.port;
