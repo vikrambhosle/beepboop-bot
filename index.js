@@ -5,8 +5,8 @@ var pg =require('pg')
 var tools = require('./compound.js')
 var rasa = require('./middleware-rasa.js')({rasa_uri: 'http://localhost:5000'});
 const connectionString = 'postgres://postgres:postgres@localhost:5432/postgres';
-const client = new pg.Client(connectionString);
-client.connect();
+//const client = new pg.Client(connectionString);
+//client.connect();
 
 //process.env.token = config.token;
 //process.env.clientId = config.clientId;
